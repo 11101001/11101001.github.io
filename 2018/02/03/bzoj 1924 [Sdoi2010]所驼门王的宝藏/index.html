@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="null">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  
+  <meta name="keywords" content="算法">
+  <meta name="description" content="zzx&#39;Blog">
+  
+  <title>ZZxのBlog</title>
+  
+    <!-- stylesheets list from config.yml -->
+    
+      <link rel="stylesheet" href="/css/materialize.min.css">
+    
+      <link rel="stylesheet" href="/css/main.min.css">
+    
+  
+  <style type="text/css">
+      html{
+          font-family: sans-serif;
+          font-weight: 300;
+      }
+      @font-face {
+          font-family: 'Material Icons';
+          font-style: normal;
+          font-weight: 400;
+          src: url(/fonts/MaterialIcons-Regular.eot);
+          src: url(/fonts/MaterialIcons-Regular.woff2) format('woff2'),
+          url(/fonts/MaterialIcons-Regular.woff) format('woff'),
+          url(/fonts/MaterialIcons-Regular.ttf) format('truetype')
+      }
+  </style>
+<link rel="shortcut icon" href="/source/favicon.ico">
+</head>
+<body>
+<div id="menu-box"><a href="javascript:void(0)" id="menu" data-activates="slide-out" class="button-collapse menu" ><span class="nav-btn"></span></a></div>
+<div id="menu-outer">
+  <div id="menu-inner">
+      <ul id="slide-out" class="side-nav" >
+    <div class="nav-header"  style="background-image: url(/images/header-bg.png);background-color:#26A69A">
+    <div class="header-box"><img src="/images/header.png" ondragstart="return false;"></div>
+    <p>11101001</p>
+    <div class="nav-link">
+        
+        <a href="http://twitter.com" target="_blank"> <div class="link-box twitter"></div></a>
+        
+        
+        <a  href="http://github.com" target="_blank"><div class="link-box github"></div></a>
+        
+        
+        <a href="mailto:http://example.com"><div class="link-box email"></div></a>
+        
+        
+        
+        <a href="http://zhihu.com" target="_blank"> <div class="link-box zhihu"></div></a>
+        
+    </div>
+    <div class="nav-search">
+        <form id="search-form"> <!-- 搜索框相关 -->
+            <input type="text" id="local-search-input" name="q" results="0" placeholder="搜索..." class="search form-control" autocomplete="off" autocorrect="off"/>
+            <div class="nav-search-img"><i class="material-icons">search</i></div>
+        </form>
+        <div id="local-search-result"></div> <!-- 搜索结果区 -->
+        <p class='no-result'>无搜索结果</p>
+    </div>
+</div>
+    <!--Homepage-->
+
+<li class="nav-list">
+    <a href="/" target="_self">
+        <div class="nav-ico"><i class="material-icons">home</i> </div><p>主页</p>
+    </a>
+</li>
+
+<!--archives-->
+
+<li class="nav-list dropdown-btn">
+    <a  class=""  target="_self">
+        <div class="nav-ico"><i class="material-icons">assignment</i></div><p>归档</p><div class="dropdown-ico"><i class="material-icons">arrow_drop_down</i></div>
+    </a>
+</li>
+
+<ul class="dropdown-menu dropdown" >
+    <li class="nav-dropdown-list">
+        <a class="archive-link" href="/archives/2018/02/">February 2018<span class="archive-count">5</span></a>
+    </li>
+</ul>
+<!--categories-->
+
+<ul class="dropdown-menu dropdown" >
+    <li class="nav-dropdown-list">
+        <a class="category-link" href="/categories/bzoj/">bzoj<span class="category-count">2</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/bzoj/题解/">题解<span class="category-count">2</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/大ZZ的日常/">大ZZ的日常<span class="category-count">2</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/大ZZ的日常/题解/">题解<span class="category-count">1</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/大ZZ的日常/题解/可持久化线段树/">可持久化线段树<span class="category-count">1</span></a>
+    </li>
+</ul>
+<!--tags-->
+
+<li class="nav-list">
+    <a href="/archives" target="_self">
+        <div class="nav-ico"><i class="material-icons">bookmark</i> </div><p>标签</p>
+    </a>
+</li>
+
+<!--photo-->
+
+<li class="nav-list">
+    <a href="/photo" class="nopjax" target="_self">
+        <div class="nav-ico"><i class="material-icons">insert_photo</i> </div><p>影集</p>
+    </a>
+</li>
+
+<!--friends-->
+
+<li class="nav-list">
+    <a href="/friends" target="_self">
+        <div class="nav-ico"><i class="material-icons">face</i> </div><p>友链</p>
+    </a>
+</li>
+
+<!--about-->
+
+<li class="nav-list">
+    <a href="/about" target="_self">
+        <div class="nav-ico"><i class="material-icons">copyright</i> </div><p>关于</p>
+    </a>
+</li>
+
+
+</ul>
+
+  </div>
+</div>
+
+<div id="content-outer">
+  <div id="content-inner">
+    
+<article id="post">
+  <div class="post-page-title"  style="background-color:#26A69A;background-image:url(/images/random/vateral-8.png)" >
+  <h2>bzoj 1924 [Sdoi2010]所驼门王的宝藏</h2>
+    
+  <p>作者:11101001 &nbsp&nbsp 发布于:<time datetime="2018-02-02T23:22:27.418Z">
+          2018-02-03
+    </time>
+  </p>
+    
+  </div>
+  <div class="post-page-content">
+  <p><a href="http://www.lydsy.com/JudgeOnline/problem.php?id=1924" target="_blank" rel="external">bzoj1924</a></p>
+<p>tarjan后dp<br>常规操作求最长路</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div></pre></td><td class="code"><pre><div class="line">#include&lt;cstdio&gt;</div><div class="line">#include&lt;iostream&gt;</div><div class="line">#include&lt;algorithm&gt;</div><div class="line">#include&lt;map&gt;</div><div class="line">#define LL long long</div><div class="line">const int maxn = 5000007;</div><div class="line">inline int read()</div><div class="line">&#123;</div><div class="line">    int x=0,f=1; </div><div class="line">	char c=getchar();</div><div class="line">    while(c&lt;&apos;0&apos; || c&gt;&apos;9&apos;) &#123;if (c==&apos;-&apos;) f=-1; c=getchar();&#125;</div><div class="line">    while(c&gt;=&apos;0&apos; &amp;&amp; c&lt;=&apos;9&apos;) &#123;x=x*10+c-&apos;0&apos;; c=getchar();&#125;</div><div class="line">    return x*f;</div><div class="line">&#125;</div><div class="line">struct data&#123;</div><div class="line">    int x,y,id,opt;</div><div class="line">&#125;a[maxn];</div><div class="line">struct edge&#123;</div><div class="line">    int to,next;</div><div class="line">&#125;edge[maxn&lt;&lt;2],E[maxn];</div><div class="line">int head[maxn],H[maxn&gt;&gt;1],cnt,recnt,ind,top,n,x,y;</div><div class="line">bool inq[maxn],vis[maxn&gt;&gt;1];</div><div class="line">int ans; </div><div class="line">int q[maxn],dfn[maxn],low[maxn];</div><div class="line">int size[maxn&gt;&gt;1],belong[maxn],tot;</div><div class="line">bool cmp_x(data a,data b) &#123;</div><div class="line">    return a.x&lt;b.x;</div><div class="line">&#125;</div><div class="line">bool cmp_y(data a,data b) &#123;</div><div class="line">    return a.y&lt;b.y;</div><div class="line">&#125;</div><div class="line">void add_edge(int x, int y) &#123;</div><div class="line">    edge[++cnt].to=y; edge[cnt].next=head[x]; head[x]=cnt;</div><div class="line">&#125;</div><div class="line">void Add_edge(int x, int y) &#123;</div><div class="line">    E[++recnt].to=y; E[recnt].next=H[x]; H[x]=recnt;</div><div class="line">&#125;</div><div class="line">void tarjan(int x) &#123;</div><div class="line">    q[++top]=x; dfn[x]=low[x]=++ind;</div><div class="line">    inq[x]=1;</div><div class="line">    for(int i=head[x];i;i=edge[i].next)</div><div class="line">        if(!dfn[edge[i].to]) &#123;</div><div class="line">            tarjan(edge[i].to);</div><div class="line">            low[x]=std::min(low[x],low[edge[i].to]);</div><div class="line">        &#125;</div><div class="line">        else if (inq[edge[i].to]) low[x]=std::min(low[x],dfn[edge[i].to]);</div><div class="line">    int now=-1;</div><div class="line">    if(dfn[x]==low[x]) &#123;</div><div class="line">        tot++;</div><div class="line">        while(now!=x) &#123;</div><div class="line">            now=q[top--];</div><div class="line">            belong[now]=tot;</div><div class="line">            size[tot]++;</div><div class="line">            inq[now]=0;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">void dfs(int x) &#123;</div><div class="line">    vis[x]=1;int mx=0;</div><div class="line">    for(int i=H[x];i;i=E[i].next)&#123;</div><div class="line">        if(!vis[E[i].to]) </div><div class="line">			dfs(E[i].to);</div><div class="line">        mx=std::max(size[E[i].to],mx);</div><div class="line">    &#125;</div><div class="line">    ans=std::max(ans,size[x]+=mx);</div><div class="line">&#125;</div><div class="line">std::map&lt;LL,int&gt;GG;</div><div class="line">int main() &#123;</div><div class="line">    n=read();x=read();y=read();</div><div class="line">    for (int i=1; i&lt;=n; i++) a[i].x=read(),</div><div class="line">		a[i].y=read(),a[i].opt=read(),GG[(LL)a[i].x*maxn+a[i].y]=i,a[i].id=i;</div><div class="line">	std::sort(a+1,a+n+1,cmp_x);</div><div class="line">    for(int i=1;i&lt;=n;i++)</div><div class="line">        if(a[i].opt==1) &#123;</div><div class="line">            for (int j=i-1;j&gt;=1; j--)</div><div class="line">                if (a[i].x==a[j].x) add_edge(a[i].id,a[j].id);</div><div class="line">                    else break;</div><div class="line">            for (int j=i+1; j&lt;=n; j++)</div><div class="line">                if (a[i].x==a[j].x) add_edge(a[i].id,a[j].id);</div><div class="line">                    else break;</div><div class="line">		&#125;</div><div class="line">	std::sort(a+1,a+n+1,cmp_y);</div><div class="line">    for(int i=1;i&lt;=n;i++)</div><div class="line">        if(a[i].opt==2)</div><div class="line">        &#123;</div><div class="line">            for(int j=i-1;j&gt;=1;j--)</div><div class="line">                if(a[i].y==a[j].y) </div><div class="line">					add_edge(a[i].id,a[j].id);</div><div class="line">                else break;</div><div class="line">            for(int j=i+1;j&lt;=n;j++)</div><div class="line">                if(a[i].y==a[j].y) </div><div class="line">					add_edge(a[i].id,a[j].id);</div><div class="line">                    else break;</div><div class="line">        &#125;</div><div class="line">    for(int i=1;i&lt;=n;i++)</div><div class="line">        if(a[i].opt==3)&#123;</div><div class="line">            for(int j=a[i].x-1; j&lt;=a[i].x+1; j++)</div><div class="line">                for(int k=a[i].y-1; k&lt;=a[i].y+1; k++)</div><div class="line">                    if(j!=a[i].x||k!=a[i].y)</div><div class="line">                        if(GG[(LL)j*maxn+k]) </div><div class="line">							add_edge(a[i].id,GG[(LL)j*maxn+k]);</div><div class="line">        &#125;</div><div class="line">    for(int i=1; i&lt;=n; i++)</div><div class="line">        if(!dfn[i])tarjan(i);</div><div class="line">    for(int x=1;x&lt;=n;x++)</div><div class="line">        for(int i=head[x];i;i=edge[i].next)</div><div class="line">            if(belong[x]!=belong[edge[i].to])    </div><div class="line">                Add_edge(belong[x],belong[edge[i].to]);</div><div class="line">    for(int i=1;i&lt;=tot;i++)</div><div class="line">        if(!vis[i]) dfs(i);</div><div class="line">    printf(&quot;%d\n&quot;,ans);</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+  </div>
+  <!--评论块-->
+    
+  <div id="disqus_thread" style="padding:30px;text-align: center;border-top:1px solid silver " data-diaque="XXX.disqus.com"><button style="margin: 0 auto;background-color:#26A69A " class="btn" onclick="disqus()">加载评论(被墙则无法加载)</button></div>
+
+  <script>
+
+      /**
+       *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+       *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+      /*
+       var disqus_config = function () {
+       this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+       this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+       };
+       */
+      function disqus() { // DON'T EDIT BELOW THIS LINE
+          var d = document, s = d.createElement('script'),v = d.createElement('script'),disquUrl=document.getElementById("disqus_thread").dataset.diaque;
+          v.id = 'dsq-count-scr'
+          v.src= '//'+disquUrl+'/count.js';
+          s.src = 'https://'+disquUrl+'/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(v);
+          (d.head || d.body).appendChild(s);
+      }
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+
+</article>
+<nav class="post-nav">
+  <!-- Prev Nav -->
+    
+  <a href="/2018/02/03/hello-world/" id="post_nav-newer" class="post-nav-content prev-content">
+      新篇
+  </a>
+    
+
+
+  <!-- Next Nav -->
+    
+  <a href="/2018/02/03/2018_2_2/" id="post_nav-older" class="post-nav-content next-content">
+      旧篇
+  </a>
+    
+</nav>
+<div class="post-toc-btn"><i class="material-icons">format_list_numbered</i></div>
+<div class="post-toc-none"><p>(无)</p></div>
+<div class="post-toc-box">
+    
+</div>
+<!--<div class="post-back"><i class="material-icons">arrow_back</i></div>-->
+<script type="text/javascript">
+    menu();
+</script>
+  </div>
+</div>
+<div id="bottom-outer">
+  <div id="bottom-inner">
+    <a  id="top-button" onfocus="this.blur();"><div class="up upinbody" style="background-color:#26A69A"><i class="material-icons material-up">vertical_align_top</i></div></a>
+
+
+<p style="line-height: 45px">Copyright ©  2017  ZZxのBlog</p>
+<p style="line-height: 45px">Powered by <a href="https://hexo.io/" target="_blank"> Hexo </a> && Theme - <a href="https://github.com/moumao/hexo-theme-Vateral" target="_blank">Vateral</a></p>
+
+  </div>
+</div>
+
+<!--影集界面需要的资源-->
+
+
+
+<!-- scripts list from theme config.yml -->
+
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+<script src="/js/materialize.min.js"></script>
+
+<script src="/js/main.min.js"></script>
+
+
+<script>
+    NProgress.start();
+    NProgress.done();
+    lazy();
+    links();
+    window.onpopstate = menu();
+    //pjax操作
+    $(document).pjax('a:not(.nopjax)', '#content-inner', {fragment:'#content-inner', timeout:8000});
+    $(document).on('pjax:start', NProgress.start).on('pjax:end', NProgress.done)
+        .on('pjax:end', () => {
+            dowmdiv();
+            lazy();
+            toc();
+            links();
+            menu();
+        });
+</script>
+
+</body>
+</html>
