@@ -83,14 +83,14 @@
 
 <ul class="dropdown-menu dropdown" >
     <li class="nav-dropdown-list">
-        <a class="archive-link" href="/archives/2018/02/">February 2018<span class="archive-count">5</span></a>
+        <a class="archive-link" href="/archives/2018/02/">February 2018<span class="archive-count">4</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2017/11/">November 2017<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2014/11/">November 2014<span class="archive-count">1</span></a>
     </li>
 </ul>
 <!--categories-->
 
 <ul class="dropdown-menu dropdown" >
     <li class="nav-dropdown-list">
-        <a class="category-link" href="/categories/bzoj/">bzoj<span class="category-count">2</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/bzoj/题解/">题解<span class="category-count">2</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/大ZZ的日常/">大ZZ的日常<span class="category-count">2</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/大ZZ的日常/题解/">题解<span class="category-count">1</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/大ZZ的日常/题解/可持久化线段树/">可持久化线段树<span class="category-count">1</span></a>
+        <a class="category-link" href="/categories/bzoj/">bzoj<span class="category-count">2</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/bzoj/题解/">题解<span class="category-count">2</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/大ZZ的日常/">大ZZ的日常<span class="category-count">2</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/大ZZ的日常/题解/">题解<span class="category-count">1</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/大ZZ的日常/题解/可持久化线段树/">可持久化线段树<span class="category-count">1</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/����/">����<span class="category-count">1</span></a>
     </li>
 </ul>
 <!--tags-->
@@ -136,24 +136,16 @@
     
 <article id="post">
   <div class="post-page-title"  style="background-color:#26A69A;background-image:url(/images/random/vateral-3.png)" >
-  <h2>bzoj 2190 [SDOI2008]仪仗队</h2>
+  <h2>Latex����</h2>
     
-  <p>作者:11101001 &nbsp&nbsp 发布于:<time datetime="2018-02-03T00:23:26.197Z">
+  <p>作者:11101001 &nbsp&nbsp 发布于:<time datetime="2018-02-03T00:55:29.000Z">
           2018-02-03
     </time>
   </p>
     
   </div>
   <div class="post-page-content">
-  <p><a href="http://www.lydsy.com/JudgeOnline/problem.php?id=2190" target="_blank" rel="external">bzoj 2190</a></p>
-<p><img src="https://i.loli.net/2018/02/02/5a746ef33b508.jpg" alt=""></p>
-<p>显然</p>
-<p>以C菌为原点构建坐标系</p>
-<p>当横纵坐标(a,b)不互质时,斜率a/b与a/gcd(a,b)和b/gcd(a,b)斜率相等,那么一定会被(a/gcd(a,b),b/gcd(a,b))挡住</p>
-<p>那就是求$\sum<em>{i=1}^{n}\sum</em>{j=1}^{n} gcd(i,j)=1$</p>
-<p>求个欧拉就好了QAQ</p>
-<p>线性求欧拉$O(n)$<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">#include&lt;cstdio&gt;</div><div class="line">#include&lt;cstring&gt;</div><div class="line">#include&lt;iostream&gt;</div><div class="line">using namespace std;</div><div class="line">int n;</div><div class="line">const int maxn =400004;</div><div class="line">int phi[maxn];</div><div class="line">void get_phi() &#123;</div><div class="line">    phi[1]=1;</div><div class="line">    for(int i=2; i&lt;=n; i++) &#123;</div><div class="line">        if(!phi[i])</div><div class="line">            for(int j=i; j&lt;=n; j+=i) &#123;</div><div class="line">                if(!phi[j])phi[j]=j;</div><div class="line">                phi[j]=phi[j]/i*(i-1);</div><div class="line">            &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">int main() &#123;</div><div class="line">    scanf(&quot;%d&quot;,&amp;n);</div><div class="line">    get_phi();</div><div class="line">    int ans=0;</div><div class="line">    for(int i=1; i&lt;=n-1; i++)ans+=phi[i];</div><div class="line">    printf(&quot;%d&quot;,2*ans+1);</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>单个求欧拉<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1110101</span>;</div><div class="line"><span class="keyword">int</span> oula[maxn];</div><div class="line"><span class="keyword">int</span> prime[maxn];</div><div class="line"><span class="keyword">bool</span> a[maxn];</div><div class="line"><span class="keyword">int</span> n;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">phi</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> ret=<span class="number">1</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i*i&lt;=x;i++) &#123;</div><div class="line">        <span class="keyword">if</span>(x%i==<span class="number">0</span>) &#123;</div><div class="line">            ret*=i<span class="number">-1</span>,x/=i;</div><div class="line">            <span class="keyword">while</span>(x%i==<span class="number">0</span>) &#123;</div><div class="line">                ret*=i;x/=i;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span>(x&gt;<span class="number">1</span>)ret*=x<span class="number">-1</span>;</div><div class="line">    <span class="keyword">return</span> ret;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">()</span> </span>&#123; </div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</div><div class="line">    <span class="keyword">int</span> ans=<span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;n;i++) &#123;</div><div class="line">        ans+=phi(i);</div><div class="line">    &#125;</div><div class="line">    ans=ans*<span class="number">2</span>,ans+=<span class="number">1</span>;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,ans);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+  <p>$F_{\mu}$<br>$F_a + F_b = F_c$</p>
 
   </div>
   <!--评论块-->
@@ -188,15 +180,11 @@
 <nav class="post-nav">
   <!-- Prev Nav -->
     
-  <a href="/2018/02/03/2018_2_2/" id="post_nav-newer" class="post-nav-content prev-content">
-      新篇
-  </a>
-    
 
 
   <!-- Next Nav -->
     
-  <a href="/2018/02/03/My-New-Passage/" id="post_nav-older" class="post-nav-content next-content">
+  <a href="/2018/02/02/bzoj 2190 [SDOI2008]仪仗队/" id="post_nav-older" class="post-nav-content next-content">
       旧篇
   </a>
     
