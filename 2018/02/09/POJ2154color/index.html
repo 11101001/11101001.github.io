@@ -67,7 +67,7 @@
 
 
 
-  <meta name="keywords" content="Burnside与polay,数学," />
+  <meta name="keywords" content="题解,polay定理," />
 
 
 
@@ -78,25 +78,22 @@
 
 
 
-<meta name="description" content="Burnside引理与polay定理引入概念1.置换简单来说就是最元素进行重排列是所有元素的异议映射，即$[1,n]$映射到$[1,n]$
-\begin{pmatrix} 1&amp;2&amp;i \ldots n \\ a_{1} &amp; a_{2}&amp;a_{i} \ldots a_{n} \end{pmatrix}比如,把正方体绕中心旋转90度，可以看做四个顶点的一个置换(1)置换可以构成换:对于元素连一条有向边">
+<meta name="description" content="题目链接POJ 2154 color
+题解对于一个n元素环染色,先考虑旋转,置换的总数是n个旋转k个元素后构成的循环数,即轮换数为$gcd(k,n)$根据polay定理,方案数为\dfrac{1}{n}\sum_{k=1}^nn^{gcd(k,n)}对与于这个式子可以化为
+\dfrac{1}{n} \sum_{d|n}n^d\sum_{k=1}^{n}[gcd(k,n)==d]\sum_{d|n}">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Burnside引理与polay定理">
-<meta property="og:url" content="11101001.com/2018/02/07/Burnside与paloy定理/index.html">
+<meta property="og:title" content="POJ 2154 color">
+<meta property="og:url" content="11101001.com/2018/02/09/POJ2154color/index.html">
 <meta property="og:site_name" content="ZZxのBlog">
-<meta property="og:description" content="Burnside引理与polay定理引入概念1.置换简单来说就是最元素进行重排列是所有元素的异议映射，即$[1,n]$映射到$[1,n]$
-\begin{pmatrix} 1&amp;2&amp;i \ldots n \\ a_{1} &amp; a_{2}&amp;a_{i} \ldots a_{n} \end{pmatrix}比如,把正方体绕中心旋转90度，可以看做四个顶点的一个置换(1)置换可以构成换:对于元素连一条有向边">
-<meta property="og:image" content="https://gss3.bdstatic.com/-Po3dSag_xI4khGkpoWK1HF6hhy/baike/s%3D282/sign=4c65a9a10e46f21fcd34595bc4256b31/5882b2b7d0a20cf4aa02198572094b36adaf99de.jpg">
-<meta property="og:image" content="https://gss0.bdstatic.com/-4o3dSag_xI4khGkpoWK1HF6hhy/baike/s%3D341/sign=d88a462fd288d43ff4a997f64c1fd2aa/78310a55b319ebc493cc97c38626cffc1e171637.jpg">
-<meta property="og:image" content="https://gss0.bdstatic.com/94o3dSag_xI4khGkpoWK1HF6hhy/baike/s%3D305/sign=0d13535fe1dde711e3d245f692eecef4/32fa828ba61ea8d3256e975e930a304e251f5818.jpg">
-<meta property="og:image" content="https://gss0.bdstatic.com/-4o3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=b771dd9af503918fc3dc359830544df2/b58f8c5494eef01fee7f92bfe2fe9925bc317d65.jpg">
-<meta property="og:image" content="https://gss0.bdstatic.com/-4o3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=b771dd9af503918fc3dc359830544df2/b58f8c5494eef01fee7f92bfe2fe9925bc317d65.jpg">
-<meta property="og:updated_time" content="2018-02-07T23:50:42.000Z">
+<meta property="og:description" content="题目链接POJ 2154 color
+题解对于一个n元素环染色,先考虑旋转,置换的总数是n个旋转k个元素后构成的循环数,即轮换数为$gcd(k,n)$根据polay定理,方案数为\dfrac{1}{n}\sum_{k=1}^nn^{gcd(k,n)}对与于这个式子可以化为
+\dfrac{1}{n} \sum_{d|n}n^d\sum_{k=1}^{n}[gcd(k,n)==d]\sum_{d|n}">
+<meta property="og:updated_time" content="2018-02-09T06:47:08.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Burnside引理与polay定理">
-<meta name="twitter:description" content="Burnside引理与polay定理引入概念1.置换简单来说就是最元素进行重排列是所有元素的异议映射，即$[1,n]$映射到$[1,n]$
-\begin{pmatrix} 1&amp;2&amp;i \ldots n \\ a_{1} &amp; a_{2}&amp;a_{i} \ldots a_{n} \end{pmatrix}比如,把正方体绕中心旋转90度，可以看做四个顶点的一个置换(1)置换可以构成换:对于元素连一条有向边">
-<meta name="twitter:image" content="https://gss3.bdstatic.com/-Po3dSag_xI4khGkpoWK1HF6hhy/baike/s%3D282/sign=4c65a9a10e46f21fcd34595bc4256b31/5882b2b7d0a20cf4aa02198572094b36adaf99de.jpg">
+<meta name="twitter:title" content="POJ 2154 color">
+<meta name="twitter:description" content="题目链接POJ 2154 color
+题解对于一个n元素环染色,先考虑旋转,置换的总数是n个旋转k个元素后构成的循环数,即轮换数为$gcd(k,n)$根据polay定理,方案数为\dfrac{1}{n}\sum_{k=1}^nn^{gcd(k,n)}对与于这个式子可以化为
+\dfrac{1}{n} \sum_{d|n}n^d\sum_{k=1}^{n}[gcd(k,n)==d]\sum_{d|n}">
 
 
 
@@ -126,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="11101001.com/2018/02/07/Burnside与paloy定理/"/>
+  <link rel="canonical" href="11101001.com/2018/02/09/POJ2154color/"/>
 
 
 
 
 
-  <title>Burnside引理与polay定理 | ZZxのBlog</title>
+  <title>POJ 2154 color | ZZxのBlog</title>
   
 
 
@@ -271,7 +268,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="11101001.com/2018/02/07/Burnside与paloy定理/">
+    <link itemprop="mainEntityOfPage" href="11101001.com/2018/02/09/POJ2154color/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="11101001">
@@ -288,7 +285,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Burnside引理与polay定理</h1>
+          <h1 class="post-title" itemprop="name headline">POJ 2154 color</h1>
         
 
         <div class="post-meta">
@@ -300,8 +297,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-07T21:59:59+08:00">
-                2018-02-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-09T12:25:29+08:00">
+                2018-02-09
               </time>
             
 
@@ -323,8 +320,19 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/算法笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">算法笔记</span>
+                  <a href="/categories/poj/" itemprop="url" rel="index">
+                    <span itemprop="name">poj</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/poj/题解/" itemprop="url" rel="index">
+                    <span itemprop="name">题解</span>
                   </a>
                 </span>
 
@@ -360,22 +368,10 @@
       
 
       
-        <h1 id="Burnside引理与polay定理"><a href="#Burnside引理与polay定理" class="headerlink" title="Burnside引理与polay定理"></a>Burnside引理与polay定理</h1><h2 id="引入概念"><a href="#引入概念" class="headerlink" title="引入概念"></a>引入概念</h2><h3 id="1-置换"><a href="#1-置换" class="headerlink" title="1.置换"></a>1.置换</h3><p>简单来说就是最元素进行重排列<br>是所有元素的异议映射，即$[1,n]$映射到$[1,n]$</p>
-<script type="math/tex; mode=display">\begin{pmatrix} 1&2&i \ldots n \\ a_{1} & a_{2}&a_{i} \ldots a_{n} \end{pmatrix}</script><p>比如,把正方体绕中心旋转90度，可以看做四个顶点的一个置换<br>(1)置换可以构成换:对于元素连一条有向边，连到置换中映射的元素，会构成n个环,(循环)<br>(2)如果一个状态$S$经过置换后与原来相同，即<script type="math/tex">S[1]=S[a_1],S[2]=S[a_2] \ldots S[n]=S[a_n]</script><br>那么称这个状态$S$为不动点<br>(3)本质不同的方案数一般指方案类的种数,等价关系通常是一个置换集合,如果一个置换能把其中一个方案映射到另一个方案那么他么是等价的。置换构成的置换群就是交换排列顺序而已。</p>
-<h3 id="2Brunside"><a href="#2Brunside" class="headerlink" title="2Brunside"></a>2Brunside</h3><p>对于一个置换群$G$,$G$是目标集[1,n]上的置换群,若一个染色方案$S$经过置换后不变,称$S$为G的不动点。将不动点的数目记为$C(G)$则等价类$l$的数目为$C(G)$的平均值</p>
-<script type="math/tex; mode=display">l=\dfrac {1}{\left| G\right| }[c_1(a_1)+c1(a_2)+ \ldots +c_1(a_g)]</script><h2 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h2><p>明的话,泥萌还是去看抽象数学吧QAQ<br>百度百科给了证明<br>证明1：$g\in G$,记$X_g(x)=1$表示$g(x)=x$否则$X_g(x)=0$。考虑以下和式：<br><img src="https://gss3.bdstatic.com/-Po3dSag_xI4khGkpoWK1HF6hhy/baike/s%3D282/sign=4c65a9a10e46f21fcd34595bc4256b31/5882b2b7d0a20cf4aa02198572094b36adaf99de.jpg" alt=""><br>对于上式最右边我们有：<br><img src="https://gss0.bdstatic.com/-4o3dSag_xI4khGkpoWK1HF6hhy/baike/s%3D341/sign=d88a462fd288d43ff4a997f64c1fd2aa/78310a55b319ebc493cc97c38626cffc1e171637.jpg" alt=""><br>所以：<br><img src="https://gss0.bdstatic.com/94o3dSag_xI4khGkpoWK1HF6hhy/baike/s%3D305/sign=0d13535fe1dde711e3d245f692eecef4/32fa828ba61ea8d3256e975e930a304e251f5818.jpg" alt=""></p>
-<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><p>一个正方形分成4格,着上两种颜色,有多少种方案?其中经过转动相同图像的算一种方案<br><img src="https://gss0.bdstatic.com/-4o3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=b771dd9af503918fc3dc359830544df2/b58f8c5494eef01fee7f92bfe2fe9925bc317d65.jpg" alt=""><br>根据计数原理,每个格子都有两种颜色可选<br>所以，一共有16种图像<br>对于图中图像的置换可分为以下四种<br>不动:</p>
-<script type="math/tex; mode=display">a_1=(1)(2)\ldots (16)</script><p>逆时针旋转90度</p>
-<script type="math/tex; mode=display">a_2=(1)(2)(3\ 4\ 5 6)(7\ 8\ 9\ 10) (11\ 12)(13\ 14\ 15\ 16)</script><p>顺时针旋转90度</p>
-<script type="math/tex; mode=display">a_3=(1)(2)(6\ 5\ 4\ 3)(10\ 9\ 8\ 7)(11\ 12)(16\ 15\ 14\ 13)</script><p>旋转180度</p>
-<script type="math/tex; mode=display">a_4=(1)(2)(3\ 5)(4\ 6)(7\ 9)(8\ 10)(11)(12) (13\ 15)(14\ 16)</script><p>那么有Burnside引理可知<br>第一种情况不动点种类为16(全)种<br>第二种情况不动点种类为$(1)\ (2)$2种<br>第三种情况与第二种情况相同<br>第四种情况为$(1)\ (2) \ (11)\ (12)$4种<br>那么有Burnside引理可知<br>等价类的种类为(16+2+2+4)/4=6种</p>
-<p>例题:<br><a href="http://poj.org/problem?id=2154" target="_blank" rel="external">POJ 2154</a> </p>
-<h2 id="3Polya定理"><a href="#3Polya定理" class="headerlink" title="3Polya定理"></a>3Polya定理</h2><p>利用Burnside引理要首先列出所有$n^m$种可能的染色方案<br>然后找出在每个置换下保持不变的方案数,显然当m或n很大的时候,复杂度会炸,这时就需要用到polya定理。<br><strong>Polya定理实际上是Burnside引理的具体化，提供了计算不动点的具体方法。</strong><br>假设一个置换有$\sigma_k$个循环<br>易知每个循环对应的所有位置颜色需一致，而任意两个循环之间选什么颜色互不影响。因此，如果有m种可选颜色，则该置换对应的不动点个数为$m^{\sigma_k}$。<br>用其替换Burnside引理中的$C(G)$，即$C(G)=m^k$。得到等价类数目为：</p>
-<script type="math/tex; mode=display">M=\dfrac {1}{\left| G\right| }\sum ^{|G|}_{k=1}m^{c (\sigma _{k})}</script><p>$|G|$表示置换的数目$\sigma _k$表示第k个置换包含的循环数目</p>
-<h2 id="例子-1"><a href="#例子-1" class="headerlink" title="例子"></a>例子</h2><p><img src="https://gss0.bdstatic.com/-4o3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=b771dd9af503918fc3dc359830544df2/b58f8c5494eef01fee7f92bfe2fe9925bc317d65.jpg" alt=""></p>
-<p>仍然是一个正方形分成4格,着上两种颜色<br>那么对于一种定点而言<br>当<br>不动：$a_1=(1)(2)(3)(4)$ //单个<br>旋转90度 ：$a_2=(1\ 2\ 3\ 4)$ //全涂<br>旋转180度 ：$a_3=(1\ 3)(2\ 4)$ //单排<br>旋转270度：$a_4=(1\ 4\ 3\ 2)$ //对角线<br>那么$M=\dfrac {1}{4} * (2^4+2^1+2^2+2^1)=6$</p>
-<h3 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h3><p><a href="http://poj.org/problem?id=1286" target="_blank" rel="external">POJ1286</a><br>完</p>
-
+        <h3 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h3><p><a href="http://poj.org/problem?id=2154" target="_blank" rel="external">POJ 2154 color</a></p>
+<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><p>对于一个n元素环染色,先考虑旋转,置换的总数是n个<br>旋转k个元素后构成的循环数,即轮换数为$gcd(k,n)$<br>根据polay定理,方案数为<script type="math/tex">\dfrac{1}{n}\sum_{k=1}^nn^{gcd(k,n)}</script><br>对与于这个式子可以化为</p>
+<script type="math/tex; mode=display">\dfrac{1}{n} \sum_{d|n}n^d\sum_{k=1}^{n}[gcd(k,n)==d]</script><script type="math/tex; mode=display">\sum_{d|n}n^{d-1}\sum_{k=1}^{n}[gcd(\dfrac{k}{d},\dfrac{n}{d})==1]</script><script type="math/tex; mode=display">\sum_{d|n}n^{d-1}\sum_{k=1}^{\dfrac{n}{d}}[gcd(k,\dfrac{n}{d})==1]</script><script type="math/tex; mode=display">\sum_{d|n}n^{d-1}*\phi(\dfrac{n}{d})</script><p>欧拉+快速幂</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"><span class="keyword">int</span> n,p;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1000000007</span>;</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> x=<span class="number">0</span>,f=<span class="number">1</span>;<span class="keyword">char</span> c=getchar();</div><div class="line">    <span class="keyword">while</span>(c&lt;<span class="string">'0'</span>||c&gt;<span class="string">'9'</span>) &#123;<span class="keyword">if</span>(c==<span class="string">'-'</span>)f=<span class="number">-1</span>;c=getchar();&#125;</div><div class="line">    <span class="keyword">while</span>(c&lt;=<span class="string">'9'</span>&amp;&amp;c&gt;=<span class="string">'0'</span>) x=x*<span class="number">10</span>+c-<span class="string">'0'</span>,c=getchar();</div><div class="line">    <span class="keyword">return</span> x*f;</div><div class="line">&#125;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxm = <span class="number">1000005</span>;</div><div class="line"><span class="keyword">int</span> pri[maxm],tot=<span class="number">0</span>;<span class="keyword">bool</span> vis[maxm];</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">phi</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> ret=x;;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;pri[i]&lt;=<span class="built_in">sqrt</span>(x);i++)</div><div class="line">        <span class="keyword">if</span>(x%pri[i]==<span class="number">0</span>) &#123;</div><div class="line">            ret=(ret-ret/pri[i]);</div><div class="line">            <span class="keyword">while</span>(x%pri[i]==<span class="number">0</span>)x/=pri[i];</div><div class="line">        &#125;</div><div class="line">    <span class="keyword">if</span>(x!=<span class="number">1</span>)ret=(ret-ret/x);</div><div class="line">    <span class="keyword">return</span> ret%p;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getpre</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=<span class="number">1000000</span>;i++) &#123;</div><div class="line">        <span class="keyword">if</span>(!vis[i])pri[++tot]=i;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=tot&amp;&amp;pri[j]*i&lt;=<span class="number">1000000</span>;j++) &#123;</div><div class="line">            vis[pri[j]*i]=<span class="number">1</span>;</div><div class="line">            <span class="keyword">if</span>(i%pri[j]==<span class="number">0</span>)<span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">qpow</span><span class="params">(<span class="keyword">int</span> n,<span class="keyword">int</span> cnt)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> ret=<span class="number">1</span>,tmp=n;tmp%=p;</div><div class="line">    <span class="keyword">while</span>(cnt) &#123;</div><div class="line">        <span class="keyword">if</span>(cnt&amp;<span class="number">1</span>) ret=(tmp*ret)%p;</div><div class="line">        tmp=tmp*tmp%p;</div><div class="line">        cnt&gt;&gt;=<span class="number">1</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> ret;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">dec</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> ans=<span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i*i&lt;=n;++i) &#123;</div><div class="line">        <span class="keyword">if</span>(i*i==n)ans=(ans+phi(i)*qpow(n,i<span class="number">-1</span>))%p;</div><div class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(!(n%i)) &#123;</div><div class="line">            ans=(ans+qpow(n,i<span class="number">-1</span>)*phi(n/i)+qpow(n,n/i<span class="number">-1</span>)*phi(i))%p;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,ans);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">    getpre();</div><div class="line">    <span class="keyword">int</span> cnt=read();</div><div class="line"><span class="comment">//  for(int i=1;i&lt;=cnt;++i) &#123;</span></div><div class="line"><span class="comment">//      printf("%d ",phi[i]);</span></div><div class="line"><span class="comment">//  &#125;</span></div><div class="line">    <span class="keyword">for</span>(;cnt--;) &#123;</div><div class="line">        n=read(),p=read();</div><div class="line">        dec(n);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
     </div>
     
@@ -392,9 +388,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Burnside与polay/" rel="tag"># Burnside与polay</a>
+            <a href="/tags/题解/" rel="tag"># 题解</a>
           
-            <a href="/tags/数学/" rel="tag"># 数学</a>
+            <a href="/tags/polay定理/" rel="tag"># polay定理</a>
           
         </div>
       
@@ -407,8 +403,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/03/latex测试/" rel="next" title="Mathjax测试">
-                <i class="fa fa-chevron-left"></i> Mathjax测试
+              <a href="/2018/02/07/Burnside与paloy定理/" rel="next" title="Burnside引理与polay定理">
+                <i class="fa fa-chevron-left"></i> Burnside引理与polay定理
               </a>
             
           </div>
@@ -416,10 +412,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/02/09/POJ2154color/" rel="prev" title="POJ 2154 color">
-                POJ 2154 color <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -588,7 +580,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Burnside引理与polay定理"><span class="nav-number">1.</span> <span class="nav-text">Burnside引理与polay定理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#引入概念"><span class="nav-number">1.1.</span> <span class="nav-text">引入概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-置换"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.置换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2Brunside"><span class="nav-number">1.1.2.</span> <span class="nav-text">2Brunside</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#证明"><span class="nav-number">1.2.</span> <span class="nav-text">证明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#例子"><span class="nav-number">1.3.</span> <span class="nav-text">例子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3Polya定理"><span class="nav-number">1.4.</span> <span class="nav-text">3Polya定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#例子-1"><span class="nav-number">1.5.</span> <span class="nav-text">例子</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#例题"><span class="nav-number">1.5.1.</span> <span class="nav-text">例题</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目链接"><span class="nav-number">1.</span> <span class="nav-text">题目链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题解"><span class="nav-number">2.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a></li></ol></div>
             
 
           </div>
