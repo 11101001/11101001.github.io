@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="数学,排列组合,prufer序," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="题目链接:bzoj 1005: [HNOI2008]明明的烦恼
+题解:首先要了解prufer序列对于每个prufer序列都对应唯一的一棵树,对于该规定了度数的点也就规定了该店在prufer序列中出现的次数,那么就是求prufer序列的方案数也就是可重复序列的全排列。首先只考虑规定度数得点设其度数为d[i],有k个,那么他在prufer中出现的次数就是d[i]-1设tot=\sum_i^{k}d[i">
+<meta property="og:type" content="article">
+<meta property="og:title" content="bzoj 1005 [HNOI2008]明明的烦恼">
+<meta property="og:url" content="11101001.com/2018/02/21/bzoj 1005 [HNOI2008]明明的烦恼/index.html">
+<meta property="og:site_name" content="ZZxのwarm blog">
+<meta property="og:description" content="题目链接:bzoj 1005: [HNOI2008]明明的烦恼
+题解:首先要了解prufer序列对于每个prufer序列都对应唯一的一棵树,对于该规定了度数的点也就规定了该店在prufer序列中出现的次数,那么就是求prufer序列的方案数也就是可重复序列的全排列。首先只考虑规定度数得点设其度数为d[i],有k个,那么他在prufer中出现的次数就是d[i]-1设tot=\sum_i^{k}d[i">
+<meta property="og:updated_time" content="2018-02-21T13:40:02.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="bzoj 1005 [HNOI2008]明明的烦恼">
+<meta name="twitter:description" content="题目链接:bzoj 1005: [HNOI2008]明明的烦恼
+题解:首先要了解prufer序列对于每个prufer序列都对应唯一的一棵树,对于该规定了度数的点也就规定了该店在prufer序列中出现的次数,那么就是求prufer序列的方案数也就是可重复序列的全排列。首先只考虑规定度数得点设其度数为d[i],有k个,那么他在prufer中出现的次数就是d[i]-1设tot=\sum_i^{k}d[i">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="11101001.com/2018/02/21/bzoj 1005 [HNOI2008]明明的烦恼/"/>
+
+
+
+
+
+  <title>bzoj 1005 [HNOI2008]明明的烦恼 | ZZxのwarm blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+<div class="bg_content">
+       <canvas id="canvas"></canvas>
+  </div>
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ZZxのwarm blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">明天，不是你想要就能有的。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-��ҳ"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-����"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-��ǩ"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-����"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-�鵵"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="11101001.com/2018/02/21/bzoj 1005 [HNOI2008]明明的烦恼/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="11101001">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/pdf/1131085-20171119180217906-2019738388.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZZxのwarm blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">bzoj 1005 [HNOI2008]明明的烦恼</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-21T21:30:29+08:00">
+                2018-02-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/bzoj/" itemprop="url" rel="index">
+                    <span itemprop="name">bzoj</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/bzoj/题解/" itemprop="url" rel="index">
+                    <span itemprop="name">题解</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接:"></a>题目链接:</h3><p><a href="http://www.lydsy.com/JudgeOnline/problem.php?id=1005" target="_blank" rel="external">bzoj 1005: [HNOI2008]明明的烦恼</a></p>
+<h3 id="题解"><a href="#题解" class="headerlink" title="题解:"></a>题解:</h3><p>首先要了解prufer序列<br>对于每个prufer序列都对应唯一的一棵树,对于该规定了度数的点也就规定了该店在prufer序列中出现的次数,那么就是求prufer序列的方案数也就是可重复序列的全排列。<br>首先只考虑规定度数得点设其度数为d[i],有k个,那么他在prufer中出现的次数就是d[i]-1<br>设<script type="math/tex">tot=\sum_i^{k}d[i]-1</script><br>那么可重排列方案数为</p>
+<script type="math/tex; mode=display">C_{tot}^{d[1]-1}*C_{tot-d[1]-1}^{d[2]-1}*\ldots C_{d[k]-1}^{d[k]-1}</script><p>然后在乘上$C_{n-2}^{tot}$选点方案<br>考虑非规定度数点的选取方案<br>对于没有限制的点，直接有 $(n-k)^{n-2-tot}$种可选。<br>答案为无限制与有限制向乘<br>然后，高精，为了不超时，用质数表来优化。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**************************************************************</span></div><div class="line">    Problem: 1005</div><div class="line">  为了不超时，用质数表来优化。</div><div class="line">    Language: C++</div><div class="line">    Result: Accepted</div><div class="line">    Time:640 ms</div><div class="line">    Memory:876 kb</div><div class="line">****************************************************************/</div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> prime[<span class="number">1000</span>]=&#123;<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">11</span>,<span class="number">13</span>,<span class="number">17</span>,<span class="number">19</span>,<span class="number">23</span>,<span class="number">29</span>,<span class="number">31</span>,<span class="number">37</span>,<span class="number">41</span>,<span class="number">43</span>,<span class="number">47</span>,<span class="number">53</span>,<span class="number">59</span>,<span class="number">61</span>,<span class="number">67</span>,<span class="number">71</span>,<span class="number">73</span>,<span class="number">79</span>,<span class="number">83</span>,<span class="number">89</span>,<span class="number">97</span>,<span class="number">101</span>,<span class="number">103</span>,<span class="number">107</span>,<span class="number">109</span>,<span class="number">113</span>,<span class="number">127</span>,<span class="number">131</span>,<span class="number">137</span>,<span class="number">139</span>,<span class="number">149</span>,<span class="number">151</span>,<span class="number">157</span>,<span class="number">163</span>,<span class="number">167</span>,<span class="number">173</span>,<span class="number">179</span>,<span class="number">181</span>,<span class="number">191</span>,<span class="number">193</span>,<span class="number">197</span>,<span class="number">199</span>,<span class="number">211</span>,<span class="number">223</span>,<span class="number">227</span>,<span class="number">229</span>,<span class="number">233</span>,<span class="number">239</span>,<span class="number">241</span>,<span class="number">251</span>,<span class="number">257</span>,<span class="number">263</span>,<span class="number">269</span>,<span class="number">271</span>,<span class="number">277</span>,<span class="number">281</span>,<span class="number">283</span>,<span class="number">293</span>,<span class="number">307</span>,<span class="number">311</span>,<span class="number">313</span>,<span class="number">317</span>,<span class="number">331</span>,<span class="number">337</span>,<span class="number">347</span>,<span class="number">349</span>,<span class="number">353</span>,<span class="number">359</span>,<span class="number">367</span>,<span class="number">373</span>,<span class="number">379</span>,<span class="number">383</span>,<span class="number">389</span>,<span class="number">397</span>,<span class="number">401</span>,<span class="number">409</span>,<span class="number">419</span>,<span class="number">421</span>,<span class="number">431</span>,<span class="number">433</span>,<span class="number">439</span>,<span class="number">443</span>,<span class="number">449</span>,<span class="number">457</span>,<span class="number">461</span>,<span class="number">463</span>,<span class="number">467</span>,<span class="number">479</span>,<span class="number">487</span>,<span class="number">491</span>,<span class="number">499</span>,<span class="number">503</span>,<span class="number">509</span>,<span class="number">521</span>,<span class="number">523</span>,<span class="number">541</span>,<span class="number">547</span>,<span class="number">557</span>,<span class="number">563</span>,<span class="number">569</span>,<span class="number">571</span>,<span class="number">577</span>,<span class="number">587</span>,<span class="number">593</span>,<span class="number">599</span>,<span class="number">601</span>,<span class="number">607</span>,<span class="number">613</span>,<span class="number">617</span>,<span class="number">619</span>,<span class="number">631</span>,<span class="number">641</span>,<span class="number">643</span>,<span class="number">647</span>,<span class="number">653</span>,<span class="number">659</span>,<span class="number">661</span>,<span class="number">673</span>,<span class="number">677</span>,<span class="number">683</span>,<span class="number">691</span>,<span class="number">701</span>,<span class="number">709</span>,<span class="number">719</span>,<span class="number">727</span>,<span class="number">733</span>,<span class="number">739</span>,<span class="number">743</span>,<span class="number">751</span>,<span class="number">757</span>,<span class="number">761</span>,<span class="number">769</span>,<span class="number">773</span>,<span class="number">787</span>,<span class="number">797</span>,<span class="number">809</span>,<span class="number">811</span>,<span class="number">821</span>,<span class="number">823</span>,<span class="number">827</span>,<span class="number">829</span>,<span class="number">839</span>,<span class="number">853</span>,<span class="number">857</span>,<span class="number">859</span>,<span class="number">863</span>,<span class="number">877</span>,<span class="number">881</span>,<span class="number">883</span>,<span class="number">887</span>,<span class="number">907</span>,<span class="number">911</span>,<span class="number">919</span>,<span class="number">929</span>,<span class="number">937</span>,<span class="number">941</span>,<span class="number">947</span>,<span class="number">953</span>,<span class="number">967</span>,<span class="number">971</span>,<span class="number">977</span>,<span class="number">983</span>,<span class="number">991</span>,<span class="number">997</span>&#125;;</div><div class="line"><span class="keyword">int</span> n,d[<span class="number">1010</span>],s[<span class="number">200</span>],k=<span class="number">0</span>,sum=<span class="number">0</span>,base=<span class="number">10000</span>;</div><div class="line"><span class="keyword">struct</span> BigInt &#123;</div><div class="line">    <span class="keyword">int</span> len,a[<span class="number">10007</span>];</div><div class="line">    BigInt() &#123;</div><div class="line">        len=<span class="number">1</span>; <span class="built_in">memset</span>(a,<span class="number">0</span>,<span class="keyword">sizeof</span>(a));a[<span class="number">0</span>]=<span class="number">1</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">int</span> &amp; <span class="keyword">operator</span>[](<span class="keyword">int</span> x) &#123;</div><div class="line">        <span class="keyword">return</span> a[x];</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"%d"</span>,a[len<span class="number">-1</span>]);</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=len<span class="number">-2</span>;i&gt;=<span class="number">0</span>;i--) <span class="built_in">printf</span>(<span class="string">"%04d"</span>,a[i]);</div><div class="line">        <span class="built_in">puts</span>(<span class="string">""</span>);</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"> </div><div class="line">BigInt <span class="keyword">operator</span>*(BigInt x,<span class="keyword">int</span> y) &#123;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;x.len;i++)</div><div class="line">    x[i]*=y;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;x.len;i++) </div><div class="line">        x[i+<span class="number">1</span>]+=x[i]/base,x[i]%=base;</div><div class="line">    <span class="keyword">while</span>(x[x.len]) </div><div class="line">        x[x.len]+=x[x.len<span class="number">-1</span>]/base, x[x.len<span class="number">-1</span>]%=base, x.len++;</div><div class="line">    <span class="keyword">return</span> x;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">mul</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>&#123;    </div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;<span class="number">168</span>;j++)&#123;</div><div class="line">        <span class="keyword">while</span>(x%prime[j]==<span class="number">0</span>) &#123;</div><div class="line">            x/=prime[j];</div><div class="line">            s[j]+=y;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) &#123;</div><div class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;d[i]);</div><div class="line">        <span class="keyword">if</span>(d[i]==<span class="number">-1</span>) k++;</div><div class="line">        <span class="keyword">else</span> sum+=d[i]<span class="number">-1</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span>(sum&gt;n<span class="number">-2</span>) &#123;</div><div class="line">        <span class="built_in">puts</span>(<span class="string">"0"</span>); <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;sum;i++)</div><div class="line">		mul(n<span class="number">-2</span>-i,<span class="number">1</span>);</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) </div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;d[i];j++)</div><div class="line">            mul(j,<span class="number">-1</span>);</div><div class="line">    mul(k,n-sum<span class="number">-2</span>);</div><div class="line">    BigInt ans;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">200</span>;i++) </div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;s[i];j++)</div><div class="line">            ans=ans*prime[i];</div><div class="line">    ans.print();</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/数学/" rel="tag"># 数学</a>
+          
+            <a href="/tags/排列组合/" rel="tag"># 排列组合</a>
+          
+            <a href="/tags/prufer序/" rel="tag"># prufer序</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/21/bzoj 2301 HAOI2011 Problem b/" rel="next" title="bzoj 2301 HAOI2011 Problem b">
+                <i class="fa fa-chevron-left"></i> bzoj 2301 HAOI2011 Problem b
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMzk4NS8xMDUyMA"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/pdf/1131085-20171119180217906-2019738388.jpg"
+                alt="11101001" />
+            
+              <p class="site-author-name" itemprop="name">11101001</p>
+              <p class="site-description motion-element" itemprop="description">Something for nothing</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://zhihu.com" target="_blank" title="ZhiHu">
+                      
+                        <i class="fa fa-fw fa-globe"></i>ZhiHu</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:741623027@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com/yourname" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/yourname" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目链接"><span class="nav-number">1.</span> <span class="nav-text">题目链接:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题解"><span class="nav-number">2.</span> <span class="nav-text">题解:</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">11101001</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
+
+<!-- ҳ������С���� -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+
