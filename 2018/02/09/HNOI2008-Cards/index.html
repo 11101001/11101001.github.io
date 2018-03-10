@@ -77,7 +77,7 @@
 
 
 
-  <meta name="keywords" content="数学,burnside引理与polay定理," />
+  <meta name="keywords" content="Burnside引理与polay定理,数学,题解," />
 
 
 
@@ -92,15 +92,15 @@
 题解题意就是求染色方案-&amp;gt;等价类洗牌方式构成成了一个置换群然而,染色数限制不能用polay定理直接求解考虑burnside引理对于一个置换群其等价类的个数为置换中不动点的平均数先暴力求出置换中的轮换，然后01背包DP求出不动点方案数
 代码1234567891011121314151617181920212223242526272">
 <meta property="og:type" content="article">
-<meta property="og:title" content="luogu [HNOI2008] Cards">
+<meta property="og:title" content="luogu P1446 [HNOI2008]Cards">
 <meta property="og:url" content="11101001.com/2018/02/09/HNOI2008-Cards/index.html">
 <meta property="og:site_name" content="ZZxのwarm blog">
 <meta property="og:description" content="题目链接luogu P1446 [HNOI2008]Cards
 题解题意就是求染色方案-&amp;gt;等价类洗牌方式构成成了一个置换群然而,染色数限制不能用polay定理直接求解考虑burnside引理对于一个置换群其等价类的个数为置换中不动点的平均数先暴力求出置换中的轮换，然后01背包DP求出不动点方案数
 代码1234567891011121314151617181920212223242526272">
-<meta property="og:updated_time" content="2018-02-09T22:30:06.000Z">
+<meta property="og:updated_time" content="2018-03-10T13:05:56.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="luogu [HNOI2008] Cards">
+<meta name="twitter:title" content="luogu P1446 [HNOI2008]Cards">
 <meta name="twitter:description" content="题目链接luogu P1446 [HNOI2008]Cards
 题解题意就是求染色方案-&amp;gt;等价类洗牌方式构成成了一个置换群然而,染色数限制不能用polay定理直接求解考虑burnside引理对于一个置换群其等价类的个数为置换中不动点的平均数先暴力求出置换中的轮换，然后01背包DP求出不动点方案数
 代码1234567891011121314151617181920212223242526272">
@@ -139,7 +139,7 @@
 
 
 
-  <title>luogu [HNOI2008] Cards | ZZxのwarm blog</title>
+  <title>luogu P1446 [HNOI2008]Cards | ZZxのwarm blog</title>
   
 
 
@@ -295,7 +295,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">luogu [HNOI2008] Cards</h1>
+          <h1 class="post-title" itemprop="name headline">luogu P1446 [HNOI2008]Cards</h1>
         
 
         <div class="post-meta">
@@ -307,7 +307,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-09T21:58:37+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-09T12:27:29+08:00">
                 2018-02-09
               </time>
             
@@ -330,8 +330,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/luogu/" itemprop="url" rel="index">
-                    <span itemprop="name">luogu</span>
+                  <a href="/categories/题解/" itemprop="url" rel="index">
+                    <span itemprop="name">题解</span>
                   </a>
                 </span>
 
@@ -341,8 +341,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/luogu/题解/" itemprop="url" rel="index">
-                    <span itemprop="name">题解</span>
+                  <a href="/categories/题解/luogu/" itemprop="url" rel="index">
+                    <span itemprop="name">luogu</span>
                   </a>
                 </span>
 
@@ -398,7 +398,6 @@
         <h3 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h3><p><a href="https://www.luogu.org/problemnew/show/P1446" target="_blank" rel="external">luogu P1446 [HNOI2008]Cards</a></p>
 <h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><p>题意就是求染色方案-&gt;等价类<br>洗牌方式构成成了一个置换群<br>然而,染色数限制不能用polay定理直接求解<br>考虑burnside引理<br>对于一个置换群其等价类的个数为置换中不动点的平均数<br>先暴力求出置换中的轮换，然后01背包DP求出不动点方案数</p>
 <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="built_in">std</span>::__gcd;</div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> LL long long</span></div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">70</span>;</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">char</span> c=getchar();<span class="keyword">int</span> x=<span class="number">0</span>;</div><div class="line">    <span class="keyword">while</span>(c&lt;<span class="string">'0'</span>||c&gt;<span class="string">'9'</span>) c=getchar();</div><div class="line">    <span class="keyword">while</span>(c&lt;=<span class="string">'9'</span>&amp;&amp;c&gt;=<span class="string">'0'</span>)x=x*<span class="number">10</span>+c-<span class="string">'0'</span>,c=getchar();</div><div class="line">    <span class="keyword">return</span> x;</div><div class="line">&#125;</div><div class="line"><span class="keyword">int</span> sr,sb,sg,m,p,n,cnt;</div><div class="line"><span class="keyword">bool</span> vis[maxn],size[maxn*maxn];</div><div class="line"><span class="keyword">int</span> col[maxn],f[maxn][maxn][maxn];</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">find</span><span class="params">()</span> </span>&#123;<span class="comment">//找到该置换中轮换的个数</span></div><div class="line">    cnt=<span class="number">0</span>;</div><div class="line">    <span class="built_in">memset</span>(vis,<span class="number">0</span>,<span class="keyword">sizeof</span> vis);</div><div class="line">    <span class="built_in">memset</span>(size,<span class="number">0</span>,<span class="keyword">sizeof</span> col);</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i) &#123;</div><div class="line">        <span class="keyword">if</span>(!vis[i]) &#123;</div><div class="line">            <span class="keyword">int</span> p=i;cnt++;</div><div class="line">            <span class="keyword">while</span>(!vis[p])vis[p]=<span class="number">1</span>,size[cnt]++,p=col[p];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">count</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="built_in">memset</span>(f,<span class="number">0</span>,<span class="keyword">sizeof</span> f);</div><div class="line">    f[<span class="number">0</span>][<span class="number">0</span>][<span class="number">0</span>]=<span class="number">1</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> q=<span class="number">1</span>;q&lt;=cnt;++q) </div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=sr;i&gt;=<span class="number">0</span>;--i)</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=sb;j&gt;=<span class="number">0</span>;--j) </div><div class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> k=sg;k&gt;=<span class="number">0</span>;--k) &#123;</div><div class="line">                    <span class="keyword">if</span>(i&gt;=size[q]) f[i][j][k]=(f[i][j][k]+f[i-size[q]][j][k])%p;</div><div class="line">                    <span class="keyword">if</span>(j&gt;=size[q]) f[i][j][k]=(f[i][j][k]+f[i][j-size[q]][k])%p;</div><div class="line">                    <span class="keyword">if</span>(k&gt;=size[q]) f[i][j][k]=(f[i][j][k]+f[i][j][k-size[q]])%p;</div><div class="line">                &#125;</div><div class="line">    <span class="keyword">return</span> f[sr][sb][sg];</div><div class="line">&#125;</div><div class="line"><span class="function">LL <span class="title">qpow</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> q)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> ret=<span class="number">1</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=q;i;i&gt;&gt;=<span class="number">1</span>,x=x*x%p) </div><div class="line">        <span class="keyword">if</span>(i&amp;<span class="number">1</span>)ret=ret*x%p;</div><div class="line">    <span class="keyword">return</span> ret;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">    LL ans=<span class="number">0</span>;</div><div class="line">    sr=read(),sb=read(),sg=read(),m=read(),p=read();</div><div class="line">    n=sr+sb+sg;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;++i) &#123;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=n;++j) &#123;</div><div class="line">            col[j]=read();</div><div class="line">        &#125;</div><div class="line">        find();</div><div class="line">        ans+=count();</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//m+1为不动置换</span></div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i) col[i]=i;</div><div class="line">    find();</div><div class="line">    ans+=count();</div><div class="line">    ans=(ans*qpow(m+<span class="number">1</span>,p<span class="number">-2</span>))%p;</div><div class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="built_in">std</span>::<span class="built_in">endl</span>;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
       
     </div>
     
@@ -415,9 +414,11 @@
       
         <div class="post-tags">
           
+            <a href="/tags/Burnside引理与polay定理/" rel="tag"># Burnside引理与polay定理</a>
+          
             <a href="/tags/数学/" rel="tag"># 数学</a>
           
-            <a href="/tags/burnside引理与polay定理/" rel="tag"># burnside引理与polay定理</a>
+            <a href="/tags/题解/" rel="tag"># 题解</a>
           
         </div>
       
@@ -430,8 +431,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/09/POJ 1286-Necklace of Beads/" rel="next" title="POJ 1286-Necklace of Beads">
-                <i class="fa fa-chevron-left"></i> POJ 1286-Necklace of Beads
+              <a href="/2018/02/09/POJ2154color/" rel="next" title="POJ 2154 color">
+                <i class="fa fa-chevron-left"></i> POJ 2154 color
               </a>
             
           </div>
@@ -440,8 +441,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/02/10/hdu 1425 Happy 2004/" rel="prev" title="hdu 1425 Happy 2004">
-                hdu 1425 Happy 2004 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/02/09/POJ 1286-Necklace of Beads/" rel="prev" title="POJ 1286-Necklace of Beads">
+                POJ 1286-Necklace of Beads <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -528,7 +529,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -539,7 +540,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -550,7 +551,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
