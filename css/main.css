@@ -1935,7 +1935,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #6cf2ff;
+  background: #ffe942;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3109,6 +3109,13 @@ img:hover {
   z-index: -1;
   width: 100%;
   height: 100%;
+}
+body {
+  background: url("https://i.loli.net/2018/04/02/5ac1f48bdf449.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  background-position: calc(x) calc(y);
 }
 #canvas {
   width: 100%;
