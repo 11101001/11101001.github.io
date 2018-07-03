@@ -1,26 +1,15 @@
 <!DOCTYPE html>
 
 
-  
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next pisces" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
 
-<script>
-    (function(){
-        if(''){
-            if (prompt('请输入文章密码') !== ''){
-                alert('密码错误！');
-                history.back();
-            }
-        }
-    })();
-</script>
 
 
 
@@ -49,35 +38,71 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+    
+  
+  <link href="https://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.cat.net/css?family=Sigmar One:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
 
 
 
 
 
 
+  
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32x32.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16x16.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" type="text/css" />
 
 
 
+  
+
+<link href="https://cdn.bootcss.com/social-share.js/1.0.9/css/share.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.0.4" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="�㷨" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=0.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=0.0.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=0.0.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="DIYgod,blog" />
 
 
 
@@ -105,11 +130,18 @@
   var CONFIG = {
     root: '/',
     scheme: 'Pisces',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    version: '0.0.4',
+    sidebar: {"position":"right","display":"always","offset":52,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    since: '2/9/2014 11:30:00',
+    onlineAPI: '',
+    site: {
+      title: 'ZZxのwarm blog',
+      subtitle: '明天，不是你想要就能有的。',
+      author: '11101001'
+    },
     duoshuo: {
       userId: '0',
       author: '博主'
@@ -120,9 +152,27 @@
       indexName: '',
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    leancloud: {
+      enable: false,
+      appID: '',
+      appKey: ''
+    },
+    favicon: {
+      visibilitychange: true,
+      narmal: '/images/favicon.ico',
+      hidden: '/images/failure.ico',
+      show_text: '(/≧▽≦/)咦！又好了！',
+      hide_text: '(●—●)喔哟，崩溃啦！'
     }
   };
 </script>
+
+
+
+  
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.1.3/jquery.min.js"></script>
+
 
 
 
@@ -138,35 +188,129 @@
 
 
 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-48084758-7', 'auto');
+  ga('send', 'pageview');
+</script>
+
 
 
 
 
 </head>
+
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
     
   
-<div class="bg_content">
-       <canvas id="canvas"></canvas>
-  </div>
-  <div class="container sidebar-position-left 
-  page-home">
-    <div class="headband"></div>
 
+  <div class="container sidebar-position-right 
+  page-home">
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
+      <div class="header-inner"><nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-投喂">
+          <a href="/donate/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-cutlery"></i> <br />
+            
+            投喂
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-后宫">
+          <a href="/friends/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-mars"></i> <br />
+            
+            后宫
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-留言板">
+          <a href="/message/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-pencil"></i> <br />
+            
+            留言板
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-rocket"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+      <li class="menu-item search">
+          <form class="search-form">
+            <input name="keyword" type="text" class="search-input" placeholder="站内搜索">
+            <button type="submit" class="search-submit"><i class="fa fa-search"></i></button>
+          </form>
+      </li>
+      <li class="menu-item online"><span id="online-count">?</span>人在线</li>
+    </ul>
+  
+
+  
+</nav>
+
+<div class="site-brand-wrapper" style="background-image: url(/images/header-sagiri.jpg)">
   <div class="site-meta ">
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <div class="brand">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">ZZxのwarm blog</span>
+        <div class="site-title">
+          <div id="animate" class="animate">
+            <span>Z</span><span>Z</span><span>x</span><span>の</span><span>w</span><span>a</span><span>r</span><span>m</span><span> </span><span>b</span><span>l</span><span>o</span><span>g</span>
+          </div>
+          <div id="guide" class="guide">
+            <span>Z</span><span>Z</span><span>x</span><span>の</span><span>w</span><span>a</span><span>r</span><span>m</span><span> </span><span>b</span><span>l</span><span>o</span><span>g</span>
+          </div>
+        </div>
         <span class="logo-line-after"><i></i></span>
-      </a>
+      </div>
     </div>
       
         <p class="site-subtitle">明天，不是你想要就能有的。</p>
@@ -181,71 +325,12 @@
     </button>
   </div>
 </div>
-
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-��ҳ"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-����"></i> <br />
-            
-            关于
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-��ǩ"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-����"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-�鵵"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-
-      
-    </ul>
-  
-
-  
-</nav>
-
+<div class="site-master" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-master-avatar" itemprop="image" src="/images/DIYgod.jpg" alt="11101001" />
+    <h2 class="site-master-description" itemprop="description">
+        <script type="text/javascript" src="https://api.lwl12.com/hitokoto/main/get?encode=js&charset=utf-8"></script><div id="lwlhitokoto"><script>lwlhitokoto()</script></div>
+    </h2>
+</div>
 
 
  </div>
@@ -270,13 +355,35 @@
   
   
   
+  <div class="post-date">
+			<div class="post-month">02月</div>
+			<div class="post-day">09</div>
+	</div>
+  
+  <div class="post-badge">
+    
+      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/题解/" itemprop="url" rel="index">
+          <span itemprop="name">题解</span>
+        </a>
+      </span>
+    
+      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/题解/poj/" itemprop="url" rel="index">
+          <span itemprop="name">poj</span>
+        </a>
+      </span>
+    
+  </div>
+  
+
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="11101001.com/2018/02/09/POJ 1286-Necklace of Beads/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="11101001">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/picture/head.jpg">
+      <meta itemprop="image" content="/images/DIYgod.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -315,7 +422,7 @@
           
             <span class="post-category" >
             
-              <span class="post-meta-divider">|</span>
+              <span class="post-meta-divider">•</span>
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -357,28 +464,9 @@
           
 
           
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                <span title="字数统计">
-                  
-                </span>
-              
-
-              
-
-              
-            </div>
-          
 
           
-        
-        
-        
+
         </div>
       </header>
     
@@ -394,16 +482,15 @@
       
         
           
-          题目链接POJ 1286 Necklace of Beads
-题解数据范围,不需要推式子两种置换，旋转与反转对于旋转置换,共有n种置换,跨度为k的置换轮换的个数为gcd(k,n)对与反转置换-&gt;当n为奇数是有种置换,每种置换包含n/2+1种轮换。-&gt;当n是偶数时,如果对称轴过珠子,则存在
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/02/09/POJ 1286-Necklace of Beads/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+            <h3 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h3><p><a href="http://poj.org/problem?id=1286" target="_blank" rel="external">POJ 1286 Necklace of Beads</a></p>
+<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><p>数据范围,不需要推式子<br>两种置换，旋转与反转<br>对于旋转置换,共有n种置换,跨度为k的置换轮换的个数为gcd(k,n)<br>对与反转置换<br>-&gt;当n为奇数是有种置换,每种置换包含n/2+1种轮换。<br>-&gt;当n是偶数时,如果对称轴过珠子,则存在n/2种置换，每种置换包含n/2种轮换<br>如果对称轴不过珠子,则存在n/2种置换，每种置换包含n/2+1种轮换<br>polay定理</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="built_in">std</span>::__gcd;</div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> LL long long</span></div><div class="line">LL ans;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> n;</div><div class="line">	<span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n)==<span class="number">1</span>) &#123;</div><div class="line">        <span class="keyword">if</span>(n==<span class="number">-1</span>) <span class="keyword">break</span>;</div><div class="line">		<span class="keyword">if</span>(!n)&#123;<span class="built_in">puts</span>(<span class="string">"0"</span>);<span class="keyword">continue</span>;&#125;</div><div class="line">		ans=<span class="number">0</span>;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</div><div class="line">			ans+=<span class="built_in">pow</span>((LL)<span class="number">3</span>,__gcd(n,i));</div><div class="line">        <span class="keyword">if</span>(n&amp;<span class="number">1</span>)</div><div class="line">          ans+=<span class="built_in">pow</span>(<span class="number">3</span>,(n+<span class="number">1</span>)/<span class="number">2</span>)*n;</div><div class="line">        <span class="keyword">else</span> &#123;</div><div class="line">           ans+=<span class="built_in">pow</span>(<span class="number">3</span>,n/<span class="number">2</span>+<span class="number">1</span>)*(n/<span class="number">2</span>);</div><div class="line">           ans+=<span class="built_in">pow</span>(<span class="number">3</span>,n/<span class="number">2</span>)*(n/<span class="number">2</span>);</div><div class="line">        &#125;</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,ans/(<span class="number">2</span>*n));</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/02/09/POJ 1286-Necklace of Beads/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
         
       
     </div>
@@ -417,16 +504,13 @@
 
     
 
+    
+
     <footer class="post-footer">
       
 
       
 
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -449,13 +533,35 @@
   
   
   
+  <div class="post-date">
+			<div class="post-month">02月</div>
+			<div class="post-day">09</div>
+	</div>
+  
+  <div class="post-badge">
+    
+      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/题解/" itemprop="url" rel="index">
+          <span itemprop="name">题解</span>
+        </a>
+      </span>
+    
+      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/题解/luogu/" itemprop="url" rel="index">
+          <span itemprop="name">luogu</span>
+        </a>
+      </span>
+    
+  </div>
+  
+
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="11101001.com/2018/02/09/HNOI2008-Cards/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="11101001">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/picture/head.jpg">
+      <meta itemprop="image" content="/images/DIYgod.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -494,7 +600,7 @@
           
             <span class="post-category" >
             
-              <span class="post-meta-divider">|</span>
+              <span class="post-meta-divider">•</span>
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -536,28 +642,9 @@
           
 
           
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                <span title="字数统计">
-                  
-                </span>
-              
-
-              
-
-              
-            </div>
-          
 
           
-        
-        
-        
+
         </div>
       </header>
     
@@ -573,16 +660,15 @@
       
         
           
-          题目链接luogu P1446 [HNOI2008]Cards
-题解题意就是求染色方案-&gt;等价类洗牌方式构成成了一个置换群然而,染色数限制不能用polay定理直接求解考虑burnside引理对于一个置换群其等价类的个数为置换中不动点的平均数先暴力求出置换中的轮换，然后01背包DP求出不动点方案
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/02/09/HNOI2008-Cards/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+            <h3 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h3><p><a href="https://www.luogu.org/problemnew/show/P1446" target="_blank" rel="external">luogu P1446 [HNOI2008]Cards</a></p>
+<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><p>题意就是求染色方案-&gt;等价类<br>洗牌方式构成成了一个置换群<br>然而,染色数限制不能用polay定理直接求解<br>考虑burnside引理<br>对于一个置换群其等价类的个数为置换中不动点的平均数<br>先暴力求出置换中的轮换，然后01背包DP求出不动点方案数</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="built_in">std</span>::__gcd;</div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> LL long long</span></div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">70</span>;</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">char</span> c=getchar();<span class="keyword">int</span> x=<span class="number">0</span>;</div><div class="line">    <span class="keyword">while</span>(c&lt;<span class="string">'0'</span>||c&gt;<span class="string">'9'</span>) c=getchar();</div><div class="line">    <span class="keyword">while</span>(c&lt;=<span class="string">'9'</span>&amp;&amp;c&gt;=<span class="string">'0'</span>)x=x*<span class="number">10</span>+c-<span class="string">'0'</span>,c=getchar();</div><div class="line">    <span class="keyword">return</span> x;</div><div class="line">&#125;</div><div class="line"><span class="keyword">int</span> sr,sb,sg,m,p,n,cnt;</div><div class="line"><span class="keyword">bool</span> vis[maxn],size[maxn*maxn];</div><div class="line"><span class="keyword">int</span> col[maxn],f[maxn][maxn][maxn];</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">find</span><span class="params">()</span> </span>&#123;<span class="comment">//找到该置换中轮换的个数</span></div><div class="line">    cnt=<span class="number">0</span>;</div><div class="line">    <span class="built_in">memset</span>(vis,<span class="number">0</span>,<span class="keyword">sizeof</span> vis);</div><div class="line">    <span class="built_in">memset</span>(size,<span class="number">0</span>,<span class="keyword">sizeof</span> col);</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i) &#123;</div><div class="line">        <span class="keyword">if</span>(!vis[i]) &#123;</div><div class="line">            <span class="keyword">int</span> p=i;cnt++;</div><div class="line">            <span class="keyword">while</span>(!vis[p])vis[p]=<span class="number">1</span>,size[cnt]++,p=col[p];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">count</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="built_in">memset</span>(f,<span class="number">0</span>,<span class="keyword">sizeof</span> f);</div><div class="line">    f[<span class="number">0</span>][<span class="number">0</span>][<span class="number">0</span>]=<span class="number">1</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> q=<span class="number">1</span>;q&lt;=cnt;++q) </div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=sr;i&gt;=<span class="number">0</span>;--i)</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=sb;j&gt;=<span class="number">0</span>;--j) </div><div class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> k=sg;k&gt;=<span class="number">0</span>;--k) &#123;</div><div class="line">                    <span class="keyword">if</span>(i&gt;=size[q]) f[i][j][k]=(f[i][j][k]+f[i-size[q]][j][k])%p;</div><div class="line">                    <span class="keyword">if</span>(j&gt;=size[q]) f[i][j][k]=(f[i][j][k]+f[i][j-size[q]][k])%p;</div><div class="line">                    <span class="keyword">if</span>(k&gt;=size[q]) f[i][j][k]=(f[i][j][k]+f[i][j][k-size[q]])%p;</div><div class="line">                &#125;</div><div class="line">    <span class="keyword">return</span> f[sr][sb][sg];</div><div class="line">&#125;</div><div class="line"><span class="function">LL <span class="title">qpow</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> q)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> ret=<span class="number">1</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=q;i;i&gt;&gt;=<span class="number">1</span>,x=x*x%p) </div><div class="line">        <span class="keyword">if</span>(i&amp;<span class="number">1</span>)ret=ret*x%p;</div><div class="line">    <span class="keyword">return</span> ret;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">    LL ans=<span class="number">0</span>;</div><div class="line">    sr=read(),sb=read(),sg=read(),m=read(),p=read();</div><div class="line">    n=sr+sb+sg;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;++i) &#123;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=n;++j) &#123;</div><div class="line">            col[j]=read();</div><div class="line">        &#125;</div><div class="line">        find();</div><div class="line">        ans+=count();</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//m+1为不动置换</span></div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i) col[i]=i;</div><div class="line">    find();</div><div class="line">    ans+=count();</div><div class="line">    ans=(ans*qpow(m+<span class="number">1</span>,p<span class="number">-2</span>))%p;</div><div class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="built_in">std</span>::<span class="built_in">endl</span>;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/02/09/HNOI2008-Cards/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
         
       
     </div>
@@ -596,16 +682,13 @@
 
     
 
+    
+
     <footer class="post-footer">
       
 
       
 
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -628,13 +711,35 @@
   
   
   
+  <div class="post-date">
+			<div class="post-month">02月</div>
+			<div class="post-day">09</div>
+	</div>
+  
+  <div class="post-badge">
+    
+      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/题解/" itemprop="url" rel="index">
+          <span itemprop="name">题解</span>
+        </a>
+      </span>
+    
+      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/题解/poj/" itemprop="url" rel="index">
+          <span itemprop="name">poj</span>
+        </a>
+      </span>
+    
+  </div>
+  
+
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="11101001.com/2018/02/09/POJ2154color/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="11101001">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/picture/head.jpg">
+      <meta itemprop="image" content="/images/DIYgod.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -673,7 +778,7 @@
           
             <span class="post-category" >
             
-              <span class="post-meta-divider">|</span>
+              <span class="post-meta-divider">•</span>
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -715,28 +820,9 @@
           
 
           
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                <span title="字数统计">
-                  
-                </span>
-              
-
-              
-
-              
-            </div>
-          
 
           
-        
-        
-        
+
         </div>
       </header>
     
@@ -752,17 +838,16 @@
       
         
           
-          题目链接POJ 2154 color
-题解对于一个n元素环染色,先考虑旋转,置换的总数是n个旋转k个元素后构成的循环数,即轮换数为$gcd(k,n)$根据polay定理,方案数为\dfrac{1}{n}\sum_{k=1}^nn^{gcd(k,n)}对与于这个式子可以化为
-\dfrac{1}{n} 
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/02/09/POJ2154color/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+            <h3 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h3><p><a href="http://poj.org/problem?id=2154" target="_blank" rel="external">POJ 2154 color</a></p>
+<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><p>对于一个n元素环染色,先考虑旋转,置换的总数是n个<br>旋转k个元素后构成的循环数,即轮换数为$gcd(k,n)$<br>根据polay定理,方案数为<script type="math/tex">\dfrac{1}{n}\sum_{k=1}^nn^{gcd(k,n)}</script><br>对与于这个式子可以化为</p>
+<script type="math/tex; mode=display">\dfrac{1}{n} \sum_{d|n}n^d\sum_{k=1}^{n}[gcd(k,n)==d]</script><script type="math/tex; mode=display">\sum_{d|n}n^{d-1}\sum_{k=1}^{n}[gcd(\dfrac{k}{d},\dfrac{n}{d})==1]</script><script type="math/tex; mode=display">\sum_{d|n}n^{d-1}\sum_{k=1}^{\dfrac{n}{d}}[gcd(k,\dfrac{n}{d})==1]</script><script type="math/tex; mode=display">\sum_{d|n}n^{d-1}*\phi(\dfrac{n}{d})</script><p>欧拉+快速幂</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"><span class="keyword">int</span> n,p;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1000000007</span>;</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> x=<span class="number">0</span>,f=<span class="number">1</span>;<span class="keyword">char</span> c=getchar();</div><div class="line">    <span class="keyword">while</span>(c&lt;<span class="string">'0'</span>||c&gt;<span class="string">'9'</span>) &#123;<span class="keyword">if</span>(c==<span class="string">'-'</span>)f=<span class="number">-1</span>;c=getchar();&#125;</div><div class="line">    <span class="keyword">while</span>(c&lt;=<span class="string">'9'</span>&amp;&amp;c&gt;=<span class="string">'0'</span>) x=x*<span class="number">10</span>+c-<span class="string">'0'</span>,c=getchar();</div><div class="line">    <span class="keyword">return</span> x*f;</div><div class="line">&#125;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxm = <span class="number">1000005</span>;</div><div class="line"><span class="keyword">int</span> pri[maxm],tot=<span class="number">0</span>;<span class="keyword">bool</span> vis[maxm];</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">phi</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> ret=x;;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;pri[i]&lt;=<span class="built_in">sqrt</span>(x);i++)</div><div class="line">        <span class="keyword">if</span>(x%pri[i]==<span class="number">0</span>) &#123;</div><div class="line">            ret=(ret-ret/pri[i]);</div><div class="line">            <span class="keyword">while</span>(x%pri[i]==<span class="number">0</span>)x/=pri[i];</div><div class="line">        &#125;</div><div class="line">    <span class="keyword">if</span>(x!=<span class="number">1</span>)ret=(ret-ret/x);</div><div class="line">    <span class="keyword">return</span> ret%p;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getpre</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=<span class="number">1000000</span>;i++) &#123;</div><div class="line">        <span class="keyword">if</span>(!vis[i])pri[++tot]=i;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=tot&amp;&amp;pri[j]*i&lt;=<span class="number">1000000</span>;j++) &#123;</div><div class="line">            vis[pri[j]*i]=<span class="number">1</span>;</div><div class="line">            <span class="keyword">if</span>(i%pri[j]==<span class="number">0</span>)<span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">qpow</span><span class="params">(<span class="keyword">int</span> n,<span class="keyword">int</span> cnt)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> ret=<span class="number">1</span>,tmp=n;tmp%=p;</div><div class="line">    <span class="keyword">while</span>(cnt) &#123;</div><div class="line">        <span class="keyword">if</span>(cnt&amp;<span class="number">1</span>) ret=(tmp*ret)%p;</div><div class="line">        tmp=tmp*tmp%p;</div><div class="line">        cnt&gt;&gt;=<span class="number">1</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> ret;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">dec</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> ans=<span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i*i&lt;=n;++i) &#123;</div><div class="line">        <span class="keyword">if</span>(i*i==n)ans=(ans+phi(i)*qpow(n,i<span class="number">-1</span>))%p;</div><div class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(!(n%i)) &#123;</div><div class="line">            ans=(ans+qpow(n,i<span class="number">-1</span>)*phi(n/i)+qpow(n,n/i<span class="number">-1</span>)*phi(i))%p;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,ans);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">    getpre();</div><div class="line">    <span class="keyword">int</span> cnt=read();</div><div class="line"><span class="comment">//  for(int i=1;i&lt;=cnt;++i) &#123;</span></div><div class="line"><span class="comment">//      printf("%d ",phi[i]);</span></div><div class="line"><span class="comment">//  &#125;</span></div><div class="line">    <span class="keyword">for</span>(;cnt--;) &#123;</div><div class="line">        n=read(),p=read();</div><div class="line">        dec(n);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/02/09/POJ2154color/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
         
       
     </div>
@@ -776,16 +861,13 @@
 
     
 
+    
+
     <footer class="post-footer">
       
 
       
 
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -808,13 +890,29 @@
   
   
   
+  <div class="post-date">
+			<div class="post-month">02月</div>
+			<div class="post-day">07</div>
+	</div>
+  
+  <div class="post-badge">
+    
+      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/算法笔记/" itemprop="url" rel="index">
+          <span itemprop="name">算法笔记</span>
+        </a>
+      </span>
+    
+  </div>
+  
+
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="11101001.com/2018/02/07/Burnside与paloy定理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="11101001">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/picture/head.jpg">
+      <meta itemprop="image" content="/images/DIYgod.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -853,7 +951,7 @@
           
             <span class="post-category" >
             
-              <span class="post-meta-divider">|</span>
+              <span class="post-meta-divider">•</span>
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -884,28 +982,9 @@
           
 
           
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                <span title="字数统计">
-                  
-                </span>
-              
-
-              
-
-              
-            </div>
-          
 
           
-        
-        
-        
+
         </div>
       </header>
     
@@ -921,16 +1000,28 @@
       
         
           
-          Burnside引理与polay定理引入概念1.置换简单来说就是最元素进行重排列是所有元素的异议映射，即$[1,n]$映射到$[1,n]$
-\begin{pmatrix} 1&2&i \ldots n \\ a_{1} & a_{2}&a_{i} \ldots a_{n} \end{pmatrix}
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/02/07/Burnside与paloy定理/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+            <h1 id="Burnside引理与polay定理"><a href="#Burnside引理与polay定理" class="headerlink" title="Burnside引理与polay定理"></a>Burnside引理与polay定理</h1><h2 id="引入概念"><a href="#引入概念" class="headerlink" title="引入概念"></a>引入概念</h2><h3 id="1-置换"><a href="#1-置换" class="headerlink" title="1.置换"></a>1.置换</h3><p>简单来说就是最元素进行重排列<br>是所有元素的异议映射，即$[1,n]$映射到$[1,n]$</p>
+<script type="math/tex; mode=display">\begin{pmatrix} 1&2&i \ldots n \\ a_{1} & a_{2}&a_{i} \ldots a_{n} \end{pmatrix}</script><p>比如,把正方体绕中心旋转90度，可以看做四个顶点的一个置换<br>(1)置换可以构成换:对于元素连一条有向边，连到置换中映射的元素，会构成n个环,(循环)<br>(2)如果一个状态$S$经过置换后与原来相同，即<script type="math/tex">S[1]=S[a_1],S[2]=S[a_2] \ldots S[n]=S[a_n]</script><br>那么称这个状态$S$为不动点<br>(3)本质不同的方案数一般指方案类的种数,等价关系通常是一个置换集合,如果一个置换能把其中一个方案映射到另一个方案那么他么是等价的。置换构成的置换群就是交换排列顺序而已。</p>
+<h3 id="2Brunside"><a href="#2Brunside" class="headerlink" title="2Brunside"></a>2Brunside</h3><p>对于一个置换群$G$,$G$是目标集[1,n]上的置换群,若一个染色方案$S$经过置换后不变,称$S$为G的不动点。将不动点的数目记为$C(G)$则等价类$l$的数目为$C(G)$的平均值</p>
+<script type="math/tex; mode=display">l=\dfrac {1}{\left| G\right| }[c_1(a_1)+c1(a_2)+ \ldots +c_1(a_g)]</script><h2 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h2><p>明的话,泥萌还是去看抽象数学吧QAQ<br>百度百科给了证明<br>证明1：$g\in G$,记$X_g(x)=1$表示$g(x)=x$否则$X_g(x)=0$。考虑以下和式：<br><img src="https://gss3.bdstatic.com/-Po3dSag_xI4khGkpoWK1HF6hhy/baike/s%3D282/sign=4c65a9a10e46f21fcd34595bc4256b31/5882b2b7d0a20cf4aa02198572094b36adaf99de.jpg" alt=""><br>对于上式最右边我们有：<br><img src="https://gss0.bdstatic.com/-4o3dSag_xI4khGkpoWK1HF6hhy/baike/s%3D341/sign=d88a462fd288d43ff4a997f64c1fd2aa/78310a55b319ebc493cc97c38626cffc1e171637.jpg" alt=""><br>所以：<br><img src="https://gss0.bdstatic.com/94o3dSag_xI4khGkpoWK1HF6hhy/baike/s%3D305/sign=0d13535fe1dde711e3d245f692eecef4/32fa828ba61ea8d3256e975e930a304e251f5818.jpg" alt=""></p>
+<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><p>一个正方形分成4格,着上两种颜色,有多少种方案?其中经过转动相同图像的算一种方案<br><img src="https://gss0.bdstatic.com/-4o3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=b771dd9af503918fc3dc359830544df2/b58f8c5494eef01fee7f92bfe2fe9925bc317d65.jpg" alt=""><br>根据计数原理,每个格子都有两种颜色可选<br>所以，一共有16种图像<br>对于图中图像的置换可分为以下四种<br>不动:</p>
+<script type="math/tex; mode=display">a_1=(1)(2)\ldots (16)</script><p>逆时针旋转90度</p>
+<script type="math/tex; mode=display">a_2=(1)(2)(3\ 4\ 5 6)(7\ 8\ 9\ 10) (11\ 12)(13\ 14\ 15\ 16)</script><p>顺时针旋转90度</p>
+<script type="math/tex; mode=display">a_3=(1)(2)(6\ 5\ 4\ 3)(10\ 9\ 8\ 7)(11\ 12)(16\ 15\ 14\ 13)</script><p>旋转180度</p>
+<script type="math/tex; mode=display">a_4=(1)(2)(3\ 5)(4\ 6)(7\ 9)(8\ 10)(11)(12) (13\ 15)(14\ 16)</script><p>那么有Burnside引理可知<br>第一种情况不动点种类为16(全)种<br>第二种情况不动点种类为$(1)\ (2)$2种<br>第三种情况与第二种情况相同<br>第四种情况为$(1)\ (2) \ (11)\ (12)$4种<br>那么有Burnside引理可知<br>等价类的种类为(16+2+2+4)/4=6种</p>
+<p>例题:<br><a href="http://poj.org/problem?id=2154" target="_blank" rel="external">POJ 2154</a> </p>
+<h2 id="3Polya定理"><a href="#3Polya定理" class="headerlink" title="3Polya定理"></a>3Polya定理</h2><p>利用Burnside引理要首先列出所有$n^m$种可能的染色方案<br>然后找出在每个置换下保持不变的方案数,显然当m或n很大的时候,复杂度会炸,这时就需要用到polya定理。<br><strong>Polya定理实际上是Burnside引理的具体化，提供了计算不动点的具体方法。</strong><br>假设一个置换有$\sigma_k$个循环<br>易知每个循环对应的所有位置颜色需一致，而任意两个循环之间选什么颜色互不影响。因此，如果有m种可选颜色，则该置换对应的不动点个数为$m^{\sigma_k}$。<br>用其替换Burnside引理中的$C(G)$，即$C(G)=m^k$。得到等价类数目为：</p>
+<script type="math/tex; mode=display">M=\dfrac {1}{\left| G\right| }\sum ^{|G|}_{k=1}m^{c (\sigma _{k})}</script><p>$|G|$表示置换的数目$\sigma _k$表示第k个置换包含的循环数目</p>
+<h2 id="例子-1"><a href="#例子-1" class="headerlink" title="例子"></a>例子</h2><p><img src="https://gss0.bdstatic.com/-4o3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=b771dd9af503918fc3dc359830544df2/b58f8c5494eef01fee7f92bfe2fe9925bc317d65.jpg" alt=""></p>
+<p>仍然是一个正方形分成4格,着上两种颜色<br>那么对于一种定点而言<br>当<br>不动：$a_1=(1)(2)(3)(4)$ //单个<br>旋转90度 ：$a_2=(1\ 2\ 3\ 4)$ //全涂<br>旋转180度 ：$a_3=(1\ 3)(2\ 4)$ //单排<br>旋转270度：$a_4=(1\ 4\ 3\ 2)$ //对角线<br>那么$M=\dfrac {1}{4} * (2^4+2^1+2^2+2^1)=6$</p>
+<h3 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h3><p><a href="http://poj.org/problem?id=1286" target="_blank" rel="external">POJ1286</a><br>完</p>
+
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/02/07/Burnside与paloy定理/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
         
       
     </div>
@@ -944,16 +1035,13 @@
 
     
 
+    
+
     <footer class="post-footer">
       
 
       
 
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -976,13 +1064,29 @@
   
   
   
+  <div class="post-date">
+			<div class="post-month">02月</div>
+			<div class="post-day">03</div>
+	</div>
+  
+  <div class="post-badge">
+    
+      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/测试/" itemprop="url" rel="index">
+          <span itemprop="name">测试</span>
+        </a>
+      </span>
+    
+  </div>
+  
+
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="11101001.com/2018/02/03/latex测试/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="11101001">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/picture/head.jpg">
+      <meta itemprop="image" content="/images/DIYgod.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1021,7 +1125,7 @@
           
             <span class="post-category" >
             
-              <span class="post-meta-divider">|</span>
+              <span class="post-meta-divider">•</span>
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -1052,28 +1156,9 @@
           
 
           
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                <span title="字数统计">
-                  
-                </span>
-              
-
-              
-
-              
-            </div>
-          
 
           
-        
-        
-        
+
         </div>
       </header>
     
@@ -1089,22 +1174,20 @@
       
         
           
-          
+            <script type="math/tex; mode=display">
 \begin{align}
 \dot{x} & = \sigma(y-x) \\
 \dot{y} & = \rho x - y - xz \\
 \dot{z} & = -\beta z + xy
 F_{\mu}
 F_a + F_b = F_c
-\end{align}
+\end{align}</script>
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/02/03/latex测试/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
           
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/02/03/latex测试/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
         
       
     </div>
@@ -1118,16 +1201,13 @@ F_a + F_b = F_c
 
     
 
+    
+
     <footer class="post-footer">
       
 
       
 
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -1150,13 +1230,35 @@ F_a + F_b = F_c
   
   
   
+  <div class="post-date">
+			<div class="post-month">02月</div>
+			<div class="post-day">02</div>
+	</div>
+  
+  <div class="post-badge">
+    
+      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/题解/" itemprop="url" rel="index">
+          <span itemprop="name">题解</span>
+        </a>
+      </span>
+    
+      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/题解/bzoj/" itemprop="url" rel="index">
+          <span itemprop="name">bzoj</span>
+        </a>
+      </span>
+    
+  </div>
+  
+
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="11101001.com/2018/02/02/bzoj 2190 [SDOI2008]仪仗队/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="11101001">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/picture/head.jpg">
+      <meta itemprop="image" content="/images/DIYgod.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1195,7 +1297,7 @@ F_a + F_b = F_c
           
             <span class="post-category" >
             
-              <span class="post-meta-divider">|</span>
+              <span class="post-meta-divider">•</span>
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -1237,28 +1339,9 @@ F_a + F_b = F_c
           
 
           
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                <span title="字数统计">
-                  
-                </span>
-              
-
-              
-
-              
-            </div>
-          
 
           
-        
-        
-        
+
         </div>
       </header>
     
@@ -1274,20 +1357,22 @@ F_a + F_b = F_c
       
         
           
-          bzoj 2190
+            <p><a href="http://www.lydsy.com/JudgeOnline/problem.php?id=2190" target="_blank" rel="external">bzoj 2190</a></p>
+<p><img src="http://images2017.cnblogs.com/blog/1131085/201802/1131085-20180202213945968-162475548.png" alt=""></p>
+<p>显然</p>
+<p>以C菌为原点构建坐标系</p>
+<p>当横纵坐标(a,b)不互质时,斜率a/b与a/gcd(a,b)和b/gcd(a,b)斜率相等,那么一定会被(a/gcd(a,b),b/gcd(a,b))挡住</p>
+<p>那就是求$\sum_{i=1}^{n}\sum_{j=1}^{n} gcd(i,j)=1$</p>
+<p>求个欧拉就好了QAQ</p>
+<p>线性求欧拉$O(n)$<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">#include&lt;cstdio&gt;</div><div class="line">#include&lt;cstring&gt;</div><div class="line">#include&lt;iostream&gt;</div><div class="line">using namespace std;</div><div class="line">int n;</div><div class="line">const int maxn =400004;</div><div class="line">int phi[maxn];</div><div class="line">void get_phi() &#123;</div><div class="line">    phi[1]=1;</div><div class="line">    for(int i=2; i&lt;=n; i++) &#123;</div><div class="line">        if(!phi[i])</div><div class="line">            for(int j=i; j&lt;=n; j+=i) &#123;</div><div class="line">                if(!phi[j])phi[j]=j;</div><div class="line">                phi[j]=phi[j]/i*(i-1);</div><div class="line">            &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">int main() &#123;</div><div class="line">    scanf(&quot;%d&quot;,&amp;n);</div><div class="line">    get_phi();</div><div class="line">    int ans=0;</div><div class="line">    for(int i=1; i&lt;=n-1; i++)ans+=phi[i];</div><div class="line">    printf(&quot;%d&quot;,2*ans+1);</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>单个求欧拉<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1110101</span>;</div><div class="line"><span class="keyword">int</span> oula[maxn];</div><div class="line"><span class="keyword">int</span> prime[maxn];</div><div class="line"><span class="keyword">bool</span> a[maxn];</div><div class="line"><span class="keyword">int</span> n;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">phi</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> ret=<span class="number">1</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i*i&lt;=x;i++) &#123;</div><div class="line">        <span class="keyword">if</span>(x%i==<span class="number">0</span>) &#123;</div><div class="line">            ret*=i<span class="number">-1</span>,x/=i;</div><div class="line">            <span class="keyword">while</span>(x%i==<span class="number">0</span>) &#123;</div><div class="line">                ret*=i;x/=i;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span>(x&gt;<span class="number">1</span>)ret*=x<span class="number">-1</span>;</div><div class="line">    <span class="keyword">return</span> ret;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">()</span> </span>&#123; </div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</div><div class="line">    <span class="keyword">int</span> ans=<span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;n;i++) &#123;</div><div class="line">        ans+=phi(i);</div><div class="line">    &#125;</div><div class="line">    ans=ans*<span class="number">2</span>,ans+=<span class="number">1</span>;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,ans);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
-显然
-以C菌为原点构建坐标系
-当横纵坐标(a,b)不互质时,斜率a/b与a/gcd(a,b)和b/gcd(a,b)斜率相等,那么一定会被(a/gcd(a,b),b/gcd(a,b))挡住
-那就是求$\sum_{i=1}^{n}\sum_{j=1}^{n} gcd(i,j)=1$
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/02/02/bzoj 2190 [SDOI2008]仪仗队/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/02/02/bzoj 2190 [SDOI2008]仪仗队/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
         
       
     </div>
@@ -1301,16 +1386,13 @@ F_a + F_b = F_c
 
     
 
+    
+
     <footer class="post-footer">
       
 
       
 
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -1333,13 +1415,35 @@ F_a + F_b = F_c
   
   
   
+  <div class="post-date">
+			<div class="post-month">02月</div>
+			<div class="post-day">02</div>
+	</div>
+  
+  <div class="post-badge">
+    
+      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/题解/" itemprop="url" rel="index">
+          <span itemprop="name">题解</span>
+        </a>
+      </span>
+    
+      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/题解/bzoj/" itemprop="url" rel="index">
+          <span itemprop="name">bzoj</span>
+        </a>
+      </span>
+    
+  </div>
+  
+
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="11101001.com/2018/02/02/bzoj 1924 [Sdoi2010]所驼门王的宝藏/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="11101001">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/picture/head.jpg">
+      <meta itemprop="image" content="/images/DIYgod.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1378,7 +1482,7 @@ F_a + F_b = F_c
           
             <span class="post-category" >
             
-              <span class="post-meta-divider">|</span>
+              <span class="post-meta-divider">•</span>
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -1420,28 +1524,9 @@ F_a + F_b = F_c
           
 
           
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                <span title="字数统计">
-                  
-                </span>
-              
-
-              
-
-              
-            </div>
-          
 
           
-        
-        
-        
+
         </div>
       </header>
     
@@ -1457,17 +1542,15 @@ F_a + F_b = F_c
       
         
           
-          bzoj1924
-tarjan后dp常规操作求最长路
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/02/02/bzoj 1924 [Sdoi2010]所驼门王的宝藏/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+            <p><a href="http://www.lydsy.com/JudgeOnline/problem.php?id=1924" target="_blank" rel="external">bzoj1924</a></p>
+<p>tarjan后dp<br>常规操作求最长路</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> LL long long</span></div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">5000007</span>;</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> x=<span class="number">0</span>,f=<span class="number">1</span>; </div><div class="line">	<span class="keyword">char</span> c=getchar();</div><div class="line">    <span class="keyword">while</span>(c&lt;<span class="string">'0'</span> || c&gt;<span class="string">'9'</span>) &#123;<span class="keyword">if</span> (c==<span class="string">'-'</span>) f=<span class="number">-1</span>; c=getchar();&#125;</div><div class="line">    <span class="keyword">while</span>(c&gt;=<span class="string">'0'</span> &amp;&amp; c&lt;=<span class="string">'9'</span>) &#123;x=x*<span class="number">10</span>+c-<span class="string">'0'</span>; c=getchar();&#125;</div><div class="line">    <span class="keyword">return</span> x*f;</div><div class="line">&#125;</div><div class="line"><span class="keyword">struct</span> data&#123;</div><div class="line">    <span class="keyword">int</span> x,y,id,opt;</div><div class="line">&#125;a[maxn];</div><div class="line"><span class="keyword">struct</span> edge&#123;</div><div class="line">    <span class="keyword">int</span> to,next;</div><div class="line">&#125;edge[maxn&lt;&lt;<span class="number">2</span>],E[maxn];</div><div class="line"><span class="keyword">int</span> head[maxn],H[maxn&gt;&gt;<span class="number">1</span>],cnt,recnt,ind,top,n,x,y;</div><div class="line"><span class="keyword">bool</span> inq[maxn],vis[maxn&gt;&gt;<span class="number">1</span>];</div><div class="line"><span class="keyword">int</span> ans; </div><div class="line"><span class="keyword">int</span> q[maxn],dfn[maxn],low[maxn];</div><div class="line"><span class="keyword">int</span> size[maxn&gt;&gt;<span class="number">1</span>],belong[maxn],tot;</div><div class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp_x</span><span class="params">(data a,data b)</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> a.x&lt;b.x;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp_y</span><span class="params">(data a,data b)</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> a.y&lt;b.y;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">add_edge</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</div><div class="line">    edge[++cnt].to=y; edge[cnt].next=head[x]; head[x]=cnt;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">Add_edge</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</div><div class="line">    E[++recnt].to=y; E[recnt].next=H[x]; H[x]=recnt;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">tarjan</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</div><div class="line">    q[++top]=x; dfn[x]=low[x]=++ind;</div><div class="line">    inq[x]=<span class="number">1</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=head[x];i;i=edge[i].next)</div><div class="line">        <span class="keyword">if</span>(!dfn[edge[i].to]) &#123;</div><div class="line">            tarjan(edge[i].to);</div><div class="line">            low[x]=<span class="built_in">std</span>::min(low[x],low[edge[i].to]);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (inq[edge[i].to]) low[x]=<span class="built_in">std</span>::min(low[x],dfn[edge[i].to]);</div><div class="line">    <span class="keyword">int</span> now=<span class="number">-1</span>;</div><div class="line">    <span class="keyword">if</span>(dfn[x]==low[x]) &#123;</div><div class="line">        tot++;</div><div class="line">        <span class="keyword">while</span>(now!=x) &#123;</div><div class="line">            now=q[top--];</div><div class="line">            belong[now]=tot;</div><div class="line">            size[tot]++;</div><div class="line">            inq[now]=<span class="number">0</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</div><div class="line">    vis[x]=<span class="number">1</span>;<span class="keyword">int</span> mx=<span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=H[x];i;i=E[i].next)&#123;</div><div class="line">        <span class="keyword">if</span>(!vis[E[i].to]) </div><div class="line">			dfs(E[i].to);</div><div class="line">        mx=<span class="built_in">std</span>::max(size[E[i].to],mx);</div><div class="line">    &#125;</div><div class="line">    ans=<span class="built_in">std</span>::max(ans,size[x]+=mx);</div><div class="line">&#125;</div><div class="line"><span class="built_in">std</span>::<span class="built_in">map</span>&lt;LL,<span class="keyword">int</span>&gt;GG;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">    n=read();x=read();y=read();</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++) a[i].x=read(),</div><div class="line">		a[i].y=read(),a[i].opt=read(),GG[(LL)a[i].x*maxn+a[i].y]=i,a[i].id=i;</div><div class="line">	<span class="built_in">std</span>::sort(a+<span class="number">1</span>,a+n+<span class="number">1</span>,cmp_x);</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</div><div class="line">        <span class="keyword">if</span>(a[i].opt==<span class="number">1</span>) &#123;</div><div class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j=i<span class="number">-1</span>;j&gt;=<span class="number">1</span>; j--)</div><div class="line">                <span class="keyword">if</span> (a[i].x==a[j].x) add_edge(a[i].id,a[j].id);</div><div class="line">                    <span class="keyword">else</span> <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j=i+<span class="number">1</span>; j&lt;=n; j++)</div><div class="line">                <span class="keyword">if</span> (a[i].x==a[j].x) add_edge(a[i].id,a[j].id);</div><div class="line">                    <span class="keyword">else</span> <span class="keyword">break</span>;</div><div class="line">		&#125;</div><div class="line">	<span class="built_in">std</span>::sort(a+<span class="number">1</span>,a+n+<span class="number">1</span>,cmp_y);</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</div><div class="line">        <span class="keyword">if</span>(a[i].opt==<span class="number">2</span>)</div><div class="line">        &#123;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=i<span class="number">-1</span>;j&gt;=<span class="number">1</span>;j--)</div><div class="line">                <span class="keyword">if</span>(a[i].y==a[j].y) </div><div class="line">					add_edge(a[i].id,a[j].id);</div><div class="line">                <span class="keyword">else</span> <span class="keyword">break</span>;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=i+<span class="number">1</span>;j&lt;=n;j++)</div><div class="line">                <span class="keyword">if</span>(a[i].y==a[j].y) </div><div class="line">					add_edge(a[i].id,a[j].id);</div><div class="line">                    <span class="keyword">else</span> <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</div><div class="line">        <span class="keyword">if</span>(a[i].opt==<span class="number">3</span>)&#123;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=a[i].x<span class="number">-1</span>; j&lt;=a[i].x+<span class="number">1</span>; j++)</div><div class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> k=a[i].y<span class="number">-1</span>; k&lt;=a[i].y+<span class="number">1</span>; k++)</div><div class="line">                    <span class="keyword">if</span>(j!=a[i].x||k!=a[i].y)</div><div class="line">                        <span class="keyword">if</span>(GG[(LL)j*maxn+k]) </div><div class="line">							add_edge(a[i].id,GG[(LL)j*maxn+k]);</div><div class="line">        &#125;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++)</div><div class="line">        <span class="keyword">if</span>(!dfn[i])tarjan(i);</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> x=<span class="number">1</span>;x&lt;=n;x++)</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=head[x];i;i=edge[i].next)</div><div class="line">            <span class="keyword">if</span>(belong[x]!=belong[edge[i].to])    </div><div class="line">                Add_edge(belong[x],belong[edge[i].to]);</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=tot;i++)</div><div class="line">        <span class="keyword">if</span>(!vis[i]) dfs(i);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,ans);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/02/02/bzoj 1924 [Sdoi2010]所驼门王的宝藏/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
         
       
     </div>
@@ -1481,16 +1564,13 @@ tarjan后dp常规操作求最长路
 
     
 
+    
+
     <footer class="post-footer">
       
 
       
 
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -1513,13 +1593,35 @@ tarjan后dp常规操作求最长路
   
   
   
+  <div class="post-date">
+			<div class="post-month">02月</div>
+			<div class="post-day">01</div>
+	</div>
+  
+  <div class="post-badge">
+    
+      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/大ZZ的日常/" itemprop="url" rel="index">
+          <span itemprop="name">大ZZ的日常</span>
+        </a>
+      </span>
+    
+      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/大ZZ的日常/可持久化线段树/" itemprop="url" rel="index">
+          <span itemprop="name">可持久化线段树</span>
+        </a>
+      </span>
+    
+  </div>
+  
+
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="11101001.com/2018/02/01/2018_2_2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="11101001">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/picture/head.jpg">
+      <meta itemprop="image" content="/images/DIYgod.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1558,7 +1660,7 @@ tarjan后dp常规操作求最长路
           
             <span class="post-category" >
             
-              <span class="post-meta-divider">|</span>
+              <span class="post-meta-divider">•</span>
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -1600,28 +1702,9 @@ tarjan后dp常规操作求最长路
           
 
           
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                <span title="字数统计">
-                  
-                </span>
-              
-
-              
-
-              
-            </div>
-          
 
           
-        
-        
-        
+
         </div>
       </header>
     
@@ -1637,33 +1720,32 @@ tarjan后dp常规操作求最长路
       
         
           
-          UOJ传送门
-这是一级标题这是二级标题这是三级标题这是四级标题这是五级标题这是六级标题
+            <p><a href="http://uoj.ac/problem/218" target="_blank" rel="external">UOJ传送门</a></p>
+<h1 id="这是一级标题"><a href="#这是一级标题" class="headerlink" title="这是一级标题"></a>这是一级标题</h1><h2 id="这是二级标题"><a href="#这是二级标题" class="headerlink" title="这是二级标题"></a>这是二级标题</h2><h3 id="这是三级标题"><a href="#这是三级标题" class="headerlink" title="这是三级标题"></a>这是三级标题</h3><h4 id="这是四级标题"><a href="#这是四级标题" class="headerlink" title="这是四级标题"></a>这是四级标题</h4><h5 id="这是五级标题"><a href="#这是五级标题" class="headerlink" title="这是五级标题"></a>这是五级标题</h5><h6 id="这是六级标题"><a href="#这是六级标题" class="headerlink" title="这是六级标题"></a>这是六级标题</h6><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>公</th>
+<th>式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>测</td>
+<td>试</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>$\sum_{i=1}^{n} a_i^2x_i$<br>$\prod_{i=1}^{n} a_i^2x_i$<br>另外<br>这是</p>
+<p>UOJ #218的题解<br>维护一颗主席树<br>火车入栈相当于区间修改，弹栈相当于返回历史版本<br>维护线段树区间求和<br>extra RE啦卡卡内存应该可过，算啦不写了<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">600005</span>;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxm = <span class="number">40000007</span>;</div><div class="line"><span class="keyword">int</span> tt[maxm],ls[maxm],tag[maxm],rs[maxm];</div><div class="line"><span class="keyword">int</span> tg[maxn&lt;&lt;<span class="number">2</span>],sum[maxn&lt;&lt;<span class="number">2</span>],sz,rt[maxn&lt;&lt;<span class="number">1</span>],a[maxn&lt;&lt;<span class="number">1</span>];</div><div class="line"><span class="keyword">int</span> n,m,ty;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">int</span> t=<span class="number">0</span>,f=<span class="number">1</span>;<span class="keyword">char</span> c=getchar();</div><div class="line">    <span class="keyword">while</span> (c&lt;<span class="string">'0'</span>||c&gt;<span class="string">'9'</span>)&#123;<span class="keyword">if</span>(c==<span class="string">'-'</span>) f=<span class="number">-1</span>;c=getchar();&#125;</div><div class="line">    <span class="keyword">while</span> (<span class="string">'0'</span>&lt;=c&amp;&amp;c&lt;=<span class="string">'9'</span>)&#123;t=t*<span class="number">10</span>+c-<span class="string">'0'</span>;c=getchar();&#125;</div><div class="line">    <span class="keyword">return</span> t*f;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span> k)</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span> (tag[k]==<span class="number">-1</span>) <span class="keyword">return</span>;</div><div class="line">    <span class="keyword">if</span> (!ls[k]) ls[k]=++sz;</div><div class="line">    <span class="keyword">if</span> (!rs[k]) rs[k]=++sz;</div><div class="line">    tag[ls[k]]=tag[rs[k]]=tt[ls[k]]=tt[rs[k]]=tag[k];</div><div class="line">    tag[k]=<span class="number">-1</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">modify</span><span class="params">(<span class="keyword">int</span> &amp;k,<span class="keyword">int</span> l,<span class="keyword">int</span> r,<span class="keyword">int</span> rt,<span class="keyword">int</span> tl,<span class="keyword">int</span> tr,<span class="keyword">int</span> v)</span></span>&#123;</div><div class="line">    k=++sz;tag[k]=<span class="number">-1</span>;</div><div class="line">    <span class="keyword">if</span> (tl&lt;=l&amp;&amp;tr&gt;=r)&#123;</div><div class="line">        tag[k]=tt[k]=v;</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line">    merge(rt);</div><div class="line">    <span class="keyword">int</span> mid=(l+r)&gt;&gt;<span class="number">1</span>;</div><div class="line">    ls[k]=ls[rt];rs[k]=rs[rt];</div><div class="line">    <span class="keyword">if</span>(mid&gt;=tl)modify(ls[k],l,mid,ls[rt],tl,tr,v);</div><div class="line">    <span class="keyword">if</span>(mid&lt;tr)modify(rs[k],mid+<span class="number">1</span>,r,rs[rt],tl,tr,v);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">query</span><span class="params">(<span class="keyword">int</span> l,<span class="keyword">int</span> r,<span class="keyword">int</span> rt,<span class="keyword">int</span> pos)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span>(!rt||l==r) <span class="keyword">return</span> tt[rt];</div><div class="line">    merge(rt);</div><div class="line">    <span class="keyword">int</span> mid=(l+r)&gt;&gt;<span class="number">1</span>;</div><div class="line">    <span class="keyword">if</span>(pos&lt;=mid) <span class="keyword">return</span> query(l,mid,ls[rt],pos);</div><div class="line">    <span class="keyword">else</span> <span class="keyword">return</span> query(mid+<span class="number">1</span>,r,rs[rt],pos);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">pushdown</span><span class="params">(<span class="keyword">int</span> l,<span class="keyword">int</span> r,<span class="keyword">int</span> rt)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span>(tg[rt]==<span class="number">-1</span>||l==r) <span class="keyword">return</span>;</div><div class="line">    tg[rt&lt;&lt;<span class="number">1</span>]=tg[rt&lt;&lt;<span class="number">1</span>|<span class="number">1</span>]=tg[rt];</div><div class="line">    <span class="keyword">int</span> mid=(l+r)&gt;&gt;<span class="number">1</span>;</div><div class="line">    sum[rt&lt;&lt;<span class="number">1</span>]=tg[rt]*(mid-l+<span class="number">1</span>);</div><div class="line">    sum[rt&lt;&lt;<span class="number">1</span>|<span class="number">1</span>]=tg[rt]*(r-mid);</div><div class="line">    tg[rt]=<span class="number">-1</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">modify2</span><span class="params">(<span class="keyword">int</span> l,<span class="keyword">int</span> r,<span class="keyword">int</span> rt,<span class="keyword">int</span> tl,<span class="keyword">int</span> tr,<span class="keyword">int</span> v)</span></span>&#123;</div><div class="line">    pushdown(l,r,rt);</div><div class="line">    <span class="keyword">if</span>(tl&lt;=l&amp;&amp;tr&gt;=r)&#123;</div><div class="line">        tg[rt]=v;sum[rt]=(r-l+<span class="number">1</span>)*v;</div><div class="line">        pushdown(l,r,rt);</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">int</span> mid=(l+r)&gt;&gt;<span class="number">1</span>;</div><div class="line">    <span class="keyword">if</span>(mid&gt;=tl)modify2(l,mid,rt&lt;&lt;<span class="number">1</span>,tl,tr,v);</div><div class="line">    <span class="keyword">if</span>(mid&lt;tr)modify2(mid+<span class="number">1</span>,r,rt&lt;&lt;<span class="number">1</span>|<span class="number">1</span>,tl,tr,v);</div><div class="line">    sum[rt]=sum[rt&lt;&lt;<span class="number">1</span>]+sum[rt&lt;&lt;<span class="number">1</span>|<span class="number">1</span>]; </div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">getsum</span><span class="params">(<span class="keyword">int</span> l,<span class="keyword">int</span> r,<span class="keyword">int</span> rt,<span class="keyword">int</span> tl,<span class="keyword">int</span> tr)</span></span>&#123;</div><div class="line">    pushdown(l,r,rt);</div><div class="line">    <span class="keyword">if</span>(tl&lt;=l&amp;&amp;tr&gt;=r)&#123;</div><div class="line">        <span class="keyword">return</span> sum[rt];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">int</span> mid=(l+r)&gt;&gt;<span class="number">1</span>;</div><div class="line">    <span class="keyword">int</span> ret=<span class="number">0</span>;</div><div class="line">    <span class="keyword">if</span>(mid&gt;=tl)ret+=getsum(l,mid,rt&lt;&lt;<span class="number">1</span>,tl,tr);</div><div class="line">    <span class="keyword">if</span>(tr&gt;mid)ret+=getsum(mid+<span class="number">1</span>,r,rt&lt;&lt;<span class="number">1</span>|<span class="number">1</span>,tl,tr);</div><div class="line">    <span class="keyword">return</span> ret;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">    n=read();m=read();ty=read();</div><div class="line">    <span class="keyword">int</span> ans=<span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)&#123;</div><div class="line">        rt[i]=rt[i<span class="number">-1</span>];</div><div class="line">        <span class="keyword">int</span> opt=read(),l=read();l=(l+ty*ans)%n+<span class="number">1</span>;</div><div class="line">        <span class="keyword">if</span> (opt==<span class="number">1</span>) &#123;</div><div class="line">             <span class="keyword">int</span> r=read();r=(r+ty*ans)%n+<span class="number">1</span>;</div><div class="line">             <span class="keyword">if</span> (l&gt;r) <span class="built_in">std</span>::swap(l,r);</div><div class="line">             <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,ans=getsum(<span class="number">1</span>,n,<span class="number">1</span>,l,r));</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (opt==<span class="number">2</span>)&#123;</div><div class="line">            <span class="keyword">int</span> x=query(<span class="number">1</span>,n,rt[i],l);</div><div class="line">            <span class="keyword">if</span>(x)&#123;</div><div class="line">                <span class="keyword">int</span> y=query(<span class="number">1</span>,n,rt[x<span class="number">-1</span>],l);</div><div class="line">                modify(rt[i],<span class="number">1</span>,n,rt[i],l,l,y);</div><div class="line">                modify2(<span class="number">1</span>,n,<span class="number">1</span>,l,l,a[y]);</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">continue</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">else</span>&#123;</div><div class="line">            <span class="keyword">int</span> r=read();r=(r+ty*ans)%n+<span class="number">1</span>;</div><div class="line">            <span class="keyword">if</span> (l&gt;r) <span class="built_in">std</span>::swap(l,r);</div><div class="line">            a[i]=read();</div><div class="line">            modify(rt[i],<span class="number">1</span>,n,rt[i],l,r,i);</div><div class="line">            modify2(<span class="number">1</span>,n,<span class="number">1</span>,l,r,a[i]);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
-
-
-公
-式
-
-
-
-
-测
-试
-
-
-
-
-$\sum_{i=1}^{n} a_i^2x_i$$\prod_{i=1}^{n} a_i^2x_i$另外这是
-UOJ #218的题解维护一颗主席树火车入栈相当于区间修改，弹
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/02/01/2018_2_2/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/02/01/2018_2_2/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
         
       
     </div>
@@ -1677,16 +1759,13 @@ UOJ #218的题解维护一颗主席树火车入栈相当于区间修改，弹
 
     
 
+    
+
     <footer class="post-footer">
       
 
       
 
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -1709,13 +1788,29 @@ UOJ #218的题解维护一颗主席树火车入栈相当于区间修改，弹
   
   
   
+  <div class="post-date">
+			<div class="post-month">11月</div>
+			<div class="post-day">07</div>
+	</div>
+  
+  <div class="post-badge">
+    
+      <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/大ZZ的日常/" itemprop="url" rel="index">
+          <span itemprop="name">大ZZ的日常</span>
+        </a>
+      </span>
+    
+  </div>
+  
+
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="11101001.com/2017/11/07/My-New-Passage/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="11101001">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/picture/head.jpg">
+      <meta itemprop="image" content="/images/DIYgod.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1754,7 +1849,7 @@ UOJ #218的题解维护一颗主席树火车入栈相当于区间修改，弹
           
             <span class="post-category" >
             
-              <span class="post-meta-divider">|</span>
+              <span class="post-meta-divider">•</span>
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -1785,28 +1880,9 @@ UOJ #218的题解维护一颗主席树火车入栈相当于区间修改，弹
           
 
           
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                <span title="字数统计">
-                  
-                </span>
-              
-
-              
-
-              
-            </div>
-          
 
           
-        
-        
-        
+
         </div>
       </header>
     
@@ -1822,16 +1898,14 @@ UOJ #218的题解维护一颗主席树火车入栈相当于区间修改，弹
       
         
           
-          HelloGood Night
+            <p>Hello<br>Good Night</p>
 
+            <div class="post-button text-center">
+              <a class="btn" href="/2017/11/07/My-New-Passage/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
           
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/11/07/My-New-Passage/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
         
       
     </div>
@@ -1845,16 +1919,13 @@ UOJ #218的题解维护一颗主席树火车入栈相当于区间修改，弹
 
     
 
+    
+
     <footer class="post-footer">
       
 
       
 
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -1877,13 +1948,19 @@ UOJ #218的题解维护一颗主席树火车入栈相当于区间修改，弹
   
   
   
+  <div class="post-date">
+			<div class="post-month">11月</div>
+			<div class="post-day">07</div>
+	</div>
+  
+
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="11101001.com/2014/11/07/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="11101001">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/picture/head.jpg">
+      <meta itemprop="image" content="/images/DIYgod.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1931,28 +2008,9 @@ UOJ #218的题解维护一颗主席树火车入栈相当于区间修改，弹
           
 
           
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                <span title="字数统计">
-                  
-                </span>
-              
-
-              
-
-              
-            </div>
-          
 
           
-        
-        
-        
+
         </div>
       </header>
     
@@ -1968,20 +2026,88 @@ UOJ #218的题解维护一颗主席树火车入栈相当于区间修改，弹
       
         
           
+            <p><img src="https://portablehexo.bitmoe.cn/hexopp/hexop.png" alt=""></p>
+<blockquote>
+<p><strong>本版本仅适用于Win环境</strong><br>本文关键字： <strong>Hexo绿色版</strong>，<strong>Hexo便携版</strong>，<strong>Hexo配置</strong>，<strong>Hexo</strong>，<strong>U盘</strong></p>
+</blockquote>
+<p><a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>是一个快速、简洁且高效的博客框架，支持 GitHub Flavored Markdown 的所有功能；具有超快生成速度，让上百个页面在几秒内瞬间完成渲染；还拥有各式各样的插件等等。</p>
+<p>但是就像很多教程里面写的那样，搭建 Hexo 本地环境，需要安装 Node.js、Git 以及使用 npm 进行安装和配置。这对于毫无经验的新手来说，是一个很大的挑战。同时，由于这些环境的存在，导致如果需要更换计算机的时候，重新安装配置一个新的Hexo环境，又得花费一些功夫。</p>
+<p>所以呢，锵锵，我们整合了一个 Hexo 便携版，来简化本地环境的部署。</p>
+<h4 id="版本介绍"><a href="#版本介绍" class="headerlink" title="版本介绍"></a><strong>版本介绍</strong></h4><p>那么所谓的便携版到底是什么？便携版就是将 Hexo 本地环境所需要的各种依赖环境的整合到一起，做成的不需要安装的版本。</p>
+<p>本便携版（Release 1.0.0）所包含的软件如下：</p>
+<blockquote>
+<ul>
+<li>Git: 2.7.4</li>
+<li>Nodejs: 6.10.1</li>
+<li>Npm: 4.4.1</li>
+<li>Hexo: 3.2.2</li>
+</ul>
+</blockquote>
+<p>为了便携的需要，不能配置固定的环境变量，所以除此之外还有相应的批处理文件，下文将详细介绍。</p>
+<h4 id="从零开始，1分钟搭建Hexo写作环境"><a href="#从零开始，1分钟搭建Hexo写作环境" class="headerlink" title="从零开始，1分钟搭建Hexo写作环境"></a><strong>从零开始，1分钟搭建Hexo写作环境</strong></h4><p>说了这么多，我们这就开始教你如何在1分钟内，从零开始搭建Hexo写作环境！</p>
+<h5 id="1-注册一个Github帐号"><a href="#1-注册一个Github帐号" class="headerlink" title="1 注册一个Github帐号"></a>1 注册一个Github帐号</h5><p>1.1 进入<a href="https://github.com" target="_blank" rel="external">Github</a>，并在右边的3个框框中分别填写 用户名、邮箱地址、账户密码，并点击 <strong><code>Sign up for Github</code></strong>;</p>
+<p><img src="https://portablehexo.bitmoe.cn/hexopp/hexop2.png" alt="图1.1.1"></p>
+<p>1.2 进入欢迎页面后，点击<strong><code>Finish sign up</code></strong>;</p>
+<p><img src="https://portablehexo.bitmoe.cn/hexopp/hexop3.png" alt="图1.2.1"></p>
+<p>1.3 进入到这一步之后（<strong>图1.3.1</strong>），先别记着点任何东西，查看你的邮箱，应该会收到如下的邮件（<strong>图1.3.2</strong>），确认你的邮件。否则，你会看到错误页面（<strong>图1.3.3</strong>）。query完毕之后在<strong>图1.3.1</strong>所示的页面，点击<strong><code>+ New repository</code></strong>;</p>
+<p><img src="https://portablehexo.bitmoe.cn/hexopp/hexop5.png" alt="图1.3.1"></p>
+<p><img src="https://portablehexo.bitmoe.cn/hexopp/hexop6.png" alt="图1.3.2"></p>
+<p><img src="https://portablehexo.bitmoe.cn/hexopp/hexop7.png" alt="图1.3.3"></p>
+<p>1.4 请在红框中的 <strong><code>Repository name</code></strong> 里面输入 <strong><code>用户名.github.io</code></strong> ( <strong>用户名</strong> 就是你刚刚 <strong>步骤1.1</strong> 中注册的用户名)，然后点击 <strong><code>Create repository</code></strong>;</p>
+<p><img src="https://portablehexo.bitmoe.cn/hexopp/hexop8.png" alt="图1.4.1"></p>
+<p>1.5 至此，Github网页注册的部分完毕</p>
+<h4 id="2-下载HEXO-Portable"><a href="#2-下载HEXO-Portable" class="headerlink" title="2 下载HEXO Portable"></a>2 下载HEXO Portable</h4><p>2.1 访问我们的 <a href="https://project.bitmoe.cn/PortableHexo/" target="_blank" rel="external">HEXO Portable</a> 页面，或者 <a href="https://github.com/Bitmoe/PortableHexo" target="_blank" rel="external">Github仓库</a> 下载最新的便携版；</p>
+<p>2.2 双击得到的自解压文件，解压到你需要安装博客的地方，可以选择硬盘或者U盘；</p>
+<h4 id="3-配置你的环境"><a href="#3-配置你的环境" class="headerlink" title="3 配置你的环境"></a>3 配置你的环境</h4><p>3.1 在你的博客的文件夹，你会发现很多批处理文件，我先介绍下各个文件的用途：</p>
+<blockquote>
+<ul>
+<li>配置基本信息 &gt;&gt; 配置博客的基本环境</li>
+<li>配置Github部署 &gt;&gt; 配置博客的部署</li>
+<li>启动命令行 &gt;&gt; 启动带环境变量的Git-Bash，否则无法使用node、npm、git等命令</li>
+<li>新建文章 &gt;&gt; 新建一篇文章</li>
+<li>渲染并本地测试 &gt;&gt; 生成并本地预览</li>
+<li>渲染并部署 &gt;&gt; 生成并部署到GitHub</li>
+<li>重置配置文件 &gt;&gt; 重置_config.yml</li>
+</ul>
+</blockquote>
+<p>3.2 我们继续进行环境配置，双击<strong><code>配置基本信息</code></strong>并按顺序输入以下信息：</p>
+<blockquote>
+<ul>
+<li>主标题：顾名思义</li>
+<li>副标题：顾名思义</li>
+<li>描述：顾名思义</li>
+<li>作者：顾名思义</li>
+<li>网站地址：填写 <strong>用户名.github.io</strong> （此处的用户名为<strong>步骤1.1</strong>中填写的用户名）<br><strong>如果您已经购买了域名，可以参看相关的文章！</strong></li>
+</ul>
+</blockquote>
+<p>3.3 双击<strong><code>配置Github部署</code></strong>并按顺序输入以下信息：</p>
+<blockquote>
+<ul>
+<li>Github的用户名：此处的用户名为<strong>步骤1.1</strong>中填写的用户名</li>
+<li>Github注册邮箱：此处的注册邮箱为<strong>步骤1.1</strong>中填写的注册邮箱</li>
+</ul>
+</blockquote>
+<p>3.4 输入完毕之后，会进行测试部署，等待屏幕提示<strong>下面将进行部署测试，稍后将有一个openssh的对话框出现，请输入你的github用户密码。</strong>的时候，按回车继续；（此处的用户密码为<strong>步骤1.1</strong>中填写的用户密码）</p>
+<p>3.5 然后继续等待，此时屏幕会出现n多行，耐心等待即可；</p>
+<p>3.6 等待屏幕提示<strong>请访问 <a href="https://用户名.github.io" target="_blank" rel="external">https://用户名.github.io</a> 查看是否部署成功！</strong>的时候，在浏览器中输入<strong><a href="https://用户名.github.io" target="_blank" rel="external">https://用户名.github.io</a> </strong>，理论上可以看到你的Hexo站点！（此处的用户名为<strong>步骤1.1</strong>中填写的用户名）</p>
+<p>3.7 至此，你的Hexo环境就配置完成了，这样你的这个Hexo博客文件夹无论移动到哪一台电脑，都能通过<strong>启动命令行</strong>出现的bash命令行，或者其余便捷的批处理文件比如<strong>新建文章</strong>、<strong>渲染并本地测试</strong>、<strong>渲染并部署</strong>进行相应的操作。</p>
+<p>3.8 如果你在配置中出错，可以运行<strong>重置配置文件</strong>后，再重复<strong>3.1~3.6步骤</strong></p>
+<h4 id="4-开始享受纯粹的Hexo写作吧！"><a href="#4-开始享受纯粹的Hexo写作吧！" class="headerlink" title="4 开始享受纯粹的Hexo写作吧！"></a>4 开始享受纯粹的Hexo写作吧！</h4><h4 id="5-备注"><a href="#5-备注" class="headerlink" title="5 备注"></a>5 备注</h4><blockquote>
+<ul>
+<li>本便携版以及本文均使用 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="external">CC BY-NC-SA 4.0</a>协议；</li>
+<li>本文所有权归 <a href="http://qistchan.com" target="_blank" rel="external">QistChan</a> &amp; <a href="https://wwww.bitmoe.com" target="_blank" rel="external">Bitmoe Inc.</a> 所有；</li>
+<li>本便携版由 <a href="https://www.bitmoe.com" target="_blank" rel="external">Bitmoe Inc.</a> 维护并提供技术支持；</li>
+<li>需要技术支持可以在<a href="https://github.com/Bitmoe/PortableHexo" target="_blank" rel="external">Github仓库</a> 提交<strong><code>Issues</code></strong>；</li>
+<li>Written with <a href="https://stackedit.io/" target="_blank" rel="external">StackEdit</a>.</li>
+</ul>
+</blockquote>
+
+            <div class="post-button text-center">
+              <a class="btn" href="/2014/11/07/hello-world/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
           
-
-本版本仅适用于Win环境本文关键字： Hexo绿色版，Hexo便携版，Hexo配置，Hexo，U盘
-
-Hexo是一个快速、简洁且高效的博客框架，支持 GitHub Flavored Markdown 的所有功能；具有超快生成速度，让上百个页面在几秒内瞬间完成渲染；还拥有各式各样的插件等等。
-但是
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2014/11/07/hello-world/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
         
       
     </div>
@@ -1995,16 +2121,13 @@ Hexo是一个快速、简洁且高效的博客框架，支持 GitHub Flavored Ma
 
     
 
+    
+
     <footer class="post-footer">
       
 
       
 
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -2029,6 +2152,39 @@ Hexo是一个快速、简洁且高效的博客框架，支持 GitHub Flavored Ma
 
 
           
+
+
+
+  
+
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         </div>
         
@@ -2055,12 +2211,50 @@ Hexo是一个快速、简洁且高效的博客框架，支持 GitHub Flavored Ma
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image"
-                src="/picture/head.jpg"
+                src="/images/card.jpg"
                 alt="11101001" />
             
-              <p class="site-author-name" itemprop="name">11101001</p>
-              <p class="site-description motion-element" itemprop="description"><script type="text/javascript" src="https://api.lwl12.com/hitokoto/main/get?encode=js&charset=utf-8"></script><div id="lwlhitokoto"><script>lwlhitokoto()</script></div></p>
+              <p class="site-author-name" itemprop="name"><span style="opacity:.2;">网红</span>DIYgod</p>
+              <p class="site-description motion-element" itemprop="description">你能抓到我么？</p>
           </div>
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/DIYgod" target="_blank" title="GitHub" data-balloon="GitHub" data-balloon-pos="up">
+                    
+                      <i class="fa fa-fw fa-github"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://twitter.com/DIYgod" target="_blank" title="Twitter" data-balloon="Twitter" data-balloon-pos="up">
+                    
+                      <i class="fa fa-fw fa-twitter"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="/images/qq-g.jpg" target="_blank" title="QQ 群" data-balloon="QQ 群" data-balloon-pos="up">
+                    
+                      <i class="fa fa-fw fa-qq"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://t.me/awesomeDIYgod" target="_blank" title="Telegram Channel" data-balloon="Telegram Channel" data-balloon-pos="up">
+                    
+                      <i class="fa fa-fw fa-telegram"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.anotherhome.net/3163" target="_blank" title="更多" data-balloon="更多" data-balloon-pos="up">
+                    
+                      <i class="fa fa-fw fa-more"></i></a>
+                </span>
+              
+            
+          </div>
+
+          
 
           <nav class="site-state motion-element">
 
@@ -2085,53 +2279,17 @@ Hexo是一个快速、简洁且高效的博客框架，支持 GitHub Flavored Ma
                 </a>
               </div>
             
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">20</span>
-                  <span class="site-state-item-name">标签</span>
-                </a>
-              </div>
             
 
           </nav>
 
           
-
           
-            <div class="links-of-author motion-element">
-                
-                  <span class="links-of-author-item">
-                    <a href="https://zhihu.com" target="_blank" title="ZhiHu">
-                      
-                        <i class="fa fa-fw fa-globe"></i>ZhiHu</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="mailto:741623027@qq.com" target="_blank" title="E-Mail">
-                      
-                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="https://plus.google.com/yourname" target="_blank" title="Google">
-                      
-                        <i class="fa fa-fw fa-google"></i>Google</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="https://twitter.com/yourname" target="_blank" title="Twitter">
-                      
-                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
-                  </span>
-                
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+                <img src="/images/cc-by-nc-sa.png" alt="Creative Commons" />
+              </a>
             </div>
-          
-
-          
           
 
           
@@ -2155,51 +2313,20 @@ Hexo是一个快速、简洁且高效的博客框架，支持 GitHub Flavored Ma
     </main>
 
     <footer id="footer" class="footer">
+      <div class="footer-image"></div>
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">11101001</span>
+        <p>博客已萌萌哒运行<span id="since"></span><span class="my-face">(●'◡'●)ﾉ♥</span></p>
+<p>custom text</p>
 
-  
-</div>
-
-
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
-
-
-
+<p>© <span itemprop="copyrightYear">2018</span> ZZxのwarm blog.
+    由 <a href="https://hexo.io/" target="_blank" class="external" rel="nofollow">Hexo</a> 强力驱动.
+    Theme By <a href="https://github.com/DIYgod/hexo-theme-sagiri" target="_blank" class="external" rel="nofollow">Sagiri</a> v0.0.4.
+    <a href="/sitemap.xml" target="_blank">站点地图</a>.
+    xxxx.
+</p>
+<p>Made with <i class="fa fa-heart throb" style="color: #d43f57;"></i> by <span class="author" itemprop="copyrightHolder">11101001</span>. </p>
 
         
-<div class="busuanzi-count">
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  
-    <span class="site-uv">
-      <i class="fa fa-user"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-      
-    </span>
-  
-
-  
-    <span class="site-pv">
-      <i class="fa fa-eye"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-      
-    </span>
-  
-</div>
-
 
 
 
@@ -2218,137 +2345,14 @@ Hexo是一个快速、简洁且高效的博客框架，支持 GitHub Flavored Ma
       </div>
     
 
+    <canvas id="evanyou"></canvas>
+    <canvas id="live2d" width="150" height="400" class="live2d"></canvas>
+
     
 
   </div>
 
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-  
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
+  <script type="text/javascript" src="/js/sagiri.min.js?v=0.0.4"></script>
 
   
 
@@ -2359,38 +2363,13 @@ Hexo是一个快速、简洁且高效的博客框架，支持 GitHub Flavored Ma
   
 
   
-
   
-
-  
-  
-
-  
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-  
-
 
   
 
   
 
   
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"live2d-widget-model-wanko"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true}});</script></body>
+</html>
